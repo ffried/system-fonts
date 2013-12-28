@@ -264,6 +264,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = FrieSoft;
 				TargetAttributes = {
+					0794576818190DC60041DC75 = {
+						DevelopmentTeam = 8AVR59FNSV;
+					};
 					0794578918190DC60041DC75 = {
 						TestTargetID = 0794576818190DC60041DC75;
 					};
@@ -464,6 +467,7 @@
 				GCC_PREFIX_HEADER = "Fonts/Fonts-Prefix.pch";
 				INFOPLIST_FILE = "Fonts/Fonts-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8A3542C9-5747-4FE7-A83E-2544121F9079";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -478,6 +482,7 @@
 				GCC_PREFIX_HEADER = "Fonts/Fonts-Prefix.pch";
 				INFOPLIST_FILE = "Fonts/Fonts-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "8A3542C9-5747-4FE7-A83E-2544121F9079";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
