@@ -1,0 +1,20 @@
+//
+//  FSFontFamily.h
+//  Fonts
+//
+//  Created by Florian Friedrich on 28.12.13.
+//  Copyright (c) 2013 FrieSoft. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@interface FSFontFamily : NSObject <NSCopying, NSCoding>
+
++ (NSArray *)allFontFamilies;
+
+- (instancetype)initWithName:(NSString *)name;
+
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSArray *fonts;
+
+@end

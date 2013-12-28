@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		074D4CF4186EDCA500672AAF /* FSFontFamily.m in Sources */ = {isa = PBXBuildFile; fileRef = 074D4CF3186EDCA500672AAF /* FSFontFamily.m */; };
+		074D4CF7186EDEB100672AAF /* NSArray+Sorting.m in Sources */ = {isa = PBXBuildFile; fileRef = 074D4CF6186EDEB100672AAF /* NSArray+Sorting.m */; };
+		074D4CFA186F0FDA00672AAF /* FSFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 074D4CF9186F0FDA00672AAF /* FSFont.m */; };
+		074D4CFB186F0FDA00672AAF /* FSFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 074D4CF9186F0FDA00672AAF /* FSFont.m */; };
+		074D4D03186F408100672AAF /* FSFontsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 079457A2181910400041DC75 /* FSFontsTableViewController.m */; };
+		074D4D04186F408600672AAF /* FSFontCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 079457A818191A050041DC75 /* FSFontCell.m */; };
+		074D4D05186F408A00672AAF /* FSFontDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0794578218190DC60041DC75 /* FSFontDetailViewController.m */; };
+		074D4D06186F408D00672AAF /* NSArray+Sorting.m in Sources */ = {isa = PBXBuildFile; fileRef = 074D4CF6186EDEB100672AAF /* NSArray+Sorting.m */; };
+		074D4D07186F409000672AAF /* FSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0794577C18190DC60041DC75 /* FSAppDelegate.m */; };
+		074D4D08186F409600672AAF /* FSFontFamily.m in Sources */ = {isa = PBXBuildFile; fileRef = 074D4CF3186EDCA500672AAF /* FSFontFamily.m */; };
+		074D4D0B186F51EC00672AAF /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 074D4D09186F51EC00672AAF /* iTunesArtwork */; };
+		074D4D0C186F51EC00672AAF /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 074D4D09186F51EC00672AAF /* iTunesArtwork */; };
+		074D4D0D186F51EC00672AAF /* iTunesArtwork@2x in Resources */ = {isa = PBXBuildFile; fileRef = 074D4D0A186F51EC00672AAF /* iTunesArtwork@2x */; };
+		074D4D0E186F51EC00672AAF /* iTunesArtwork@2x in Resources */ = {isa = PBXBuildFile; fileRef = 074D4D0A186F51EC00672AAF /* iTunesArtwork@2x */; };
 		0794576D18190DC60041DC75 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0794576C18190DC60041DC75 /* Foundation.framework */; };
 		0794576F18190DC60041DC75 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0794576E18190DC60041DC75 /* CoreGraphics.framework */; };
 		0794577118190DC60041DC75 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0794577018190DC60041DC75 /* UIKit.framework */; };
@@ -14,13 +28,15 @@
 		0794577918190DC60041DC75 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0794577818190DC60041DC75 /* main.m */; };
 		0794577D18190DC60041DC75 /* FSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0794577C18190DC60041DC75 /* FSAppDelegate.m */; };
 		0794578018190DC60041DC75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0794577E18190DC60041DC75 /* Main.storyboard */; };
-		0794578318190DC60041DC75 /* FSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0794578218190DC60041DC75 /* FSViewController.m */; };
+		0794578318190DC60041DC75 /* FSFontDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0794578218190DC60041DC75 /* FSFontDetailViewController.m */; };
 		0794578518190DC60041DC75 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0794578418190DC60041DC75 /* Images.xcassets */; };
 		0794578C18190DC60041DC75 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0794578B18190DC60041DC75 /* XCTest.framework */; };
 		0794578D18190DC60041DC75 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0794576C18190DC60041DC75 /* Foundation.framework */; };
 		0794578E18190DC60041DC75 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0794577018190DC60041DC75 /* UIKit.framework */; };
 		0794579618190DC60041DC75 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0794579418190DC60041DC75 /* InfoPlist.strings */; };
 		0794579818190DC60041DC75 /* FontsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0794579718190DC60041DC75 /* FontsTests.m */; };
+		079457A3181910400041DC75 /* FSFontsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 079457A2181910400041DC75 /* FSFontsTableViewController.m */; };
+		079457A918191A050041DC75 /* FSFontCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 079457A818191A050041DC75 /* FSFontCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +50,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		074D4CF2186EDCA500672AAF /* FSFontFamily.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSFontFamily.h; sourceTree = "<group>"; };
+		074D4CF3186EDCA500672AAF /* FSFontFamily.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSFontFamily.m; sourceTree = "<group>"; };
+		074D4CF5186EDEB100672AAF /* NSArray+Sorting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Sorting.h"; sourceTree = "<group>"; };
+		074D4CF6186EDEB100672AAF /* NSArray+Sorting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Sorting.m"; sourceTree = "<group>"; };
+		074D4CF8186F0FDA00672AAF /* FSFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSFont.h; sourceTree = "<group>"; };
+		074D4CF9186F0FDA00672AAF /* FSFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSFont.m; sourceTree = "<group>"; };
+		074D4D09186F51EC00672AAF /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
+		074D4D0A186F51EC00672AAF /* iTunesArtwork@2x */ = {isa = PBXFileReference; lastKnownFileType = file; path = "iTunesArtwork@2x"; sourceTree = "<group>"; };
 		0794576918190DC60041DC75 /* Fonts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fonts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0794576C18190DC60041DC75 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0794576E18190DC60041DC75 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -45,14 +69,18 @@
 		0794577B18190DC60041DC75 /* FSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSAppDelegate.h; sourceTree = "<group>"; };
 		0794577C18190DC60041DC75 /* FSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSAppDelegate.m; sourceTree = "<group>"; };
 		0794577F18190DC60041DC75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0794578118190DC60041DC75 /* FSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSViewController.h; sourceTree = "<group>"; };
-		0794578218190DC60041DC75 /* FSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSViewController.m; sourceTree = "<group>"; };
+		0794578118190DC60041DC75 /* FSFontDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSFontDetailViewController.h; sourceTree = "<group>"; };
+		0794578218190DC60041DC75 /* FSFontDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSFontDetailViewController.m; sourceTree = "<group>"; };
 		0794578418190DC60041DC75 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0794578A18190DC60041DC75 /* FontsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FontsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0794578B18190DC60041DC75 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		0794579318190DC60041DC75 /* FontsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FontsTests-Info.plist"; sourceTree = "<group>"; };
 		0794579518190DC60041DC75 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0794579718190DC60041DC75 /* FontsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FontsTests.m; sourceTree = "<group>"; };
+		079457A1181910400041DC75 /* FSFontsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSFontsTableViewController.h; sourceTree = "<group>"; };
+		079457A2181910400041DC75 /* FSFontsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSFontsTableViewController.m; sourceTree = "<group>"; };
+		079457A718191A050041DC75 /* FSFontCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSFontCell.h; sourceTree = "<group>"; };
+		079457A818191A050041DC75 /* FSFontCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSFontCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +107,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		074D4CFC186F398F00672AAF /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0794577E18190DC60041DC75 /* Main.storyboard */,
+				079457A1181910400041DC75 /* FSFontsTableViewController.h */,
+				079457A2181910400041DC75 /* FSFontsTableViewController.m */,
+				079457A718191A050041DC75 /* FSFontCell.h */,
+				079457A818191A050041DC75 /* FSFontCell.m */,
+				0794578118190DC60041DC75 /* FSFontDetailViewController.h */,
+				0794578218190DC60041DC75 /* FSFontDetailViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		074D4CFD186F399800672AAF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				074D4CF2186EDCA500672AAF /* FSFontFamily.h */,
+				074D4CF3186EDCA500672AAF /* FSFontFamily.m */,
+				074D4CF8186F0FDA00672AAF /* FSFont.h */,
+				074D4CF9186F0FDA00672AAF /* FSFont.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		074D4CFE186F399E00672AAF /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				074D4CF5186EDEB100672AAF /* NSArray+Sorting.h */,
+				074D4CF6186EDEB100672AAF /* NSArray+Sorting.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		0794576018190DC60041DC75 = {
 			isa = PBXGroup;
 			children = (
@@ -112,12 +174,12 @@
 		0794577218190DC60041DC75 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				0794578418190DC60041DC75 /* Images.xcassets */,
+				074D4CFD186F399800672AAF /* Model */,
+				074D4CFC186F398F00672AAF /* View Controllers */,
+				074D4CFE186F399E00672AAF /* Categories */,
 				0794577B18190DC60041DC75 /* FSAppDelegate.h */,
 				0794577C18190DC60041DC75 /* FSAppDelegate.m */,
-				0794577E18190DC60041DC75 /* Main.storyboard */,
-				0794578118190DC60041DC75 /* FSViewController.h */,
-				0794578218190DC60041DC75 /* FSViewController.m */,
-				0794578418190DC60041DC75 /* Images.xcassets */,
 				0794577318190DC60041DC75 /* Supporting Files */,
 			);
 			path = Fonts;
@@ -126,6 +188,8 @@
 		0794577318190DC60041DC75 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				074D4D09186F51EC00672AAF /* iTunesArtwork */,
+				074D4D0A186F51EC00672AAF /* iTunesArtwork@2x */,
 				0794577418190DC60041DC75 /* Fonts-Info.plist */,
 				0794577518190DC60041DC75 /* InfoPlist.strings */,
 				0794577818190DC60041DC75 /* main.m */,
@@ -229,9 +293,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				074D4D0D186F51EC00672AAF /* iTunesArtwork@2x in Resources */,
 				0794578518190DC60041DC75 /* Images.xcassets in Resources */,
 				0794577718190DC60041DC75 /* InfoPlist.strings in Resources */,
 				0794578018190DC60041DC75 /* Main.storyboard in Resources */,
+				074D4D0B186F51EC00672AAF /* iTunesArtwork in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,7 +305,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				074D4D0E186F51EC00672AAF /* iTunesArtwork@2x in Resources */,
 				0794579618190DC60041DC75 /* InfoPlist.strings in Resources */,
+				074D4D0C186F51EC00672AAF /* iTunesArtwork in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,8 +319,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0794577918190DC60041DC75 /* main.m in Sources */,
+				079457A918191A050041DC75 /* FSFontCell.m in Sources */,
+				079457A3181910400041DC75 /* FSFontsTableViewController.m in Sources */,
+				074D4CF4186EDCA500672AAF /* FSFontFamily.m in Sources */,
+				074D4CFA186F0FDA00672AAF /* FSFont.m in Sources */,
+				074D4CF7186EDEB100672AAF /* NSArray+Sorting.m in Sources */,
 				0794577D18190DC60041DC75 /* FSAppDelegate.m in Sources */,
-				0794578318190DC60041DC75 /* FSViewController.m in Sources */,
+				0794578318190DC60041DC75 /* FSFontDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +334,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0794579818190DC60041DC75 /* FontsTests.m in Sources */,
+				074D4D07186F409000672AAF /* FSAppDelegate.m in Sources */,
+				074D4CFB186F0FDA00672AAF /* FSFont.m in Sources */,
+				074D4D08186F409600672AAF /* FSFontFamily.m in Sources */,
+				074D4D05186F408A00672AAF /* FSFontDetailViewController.m in Sources */,
+				074D4D03186F408100672AAF /* FSFontsTableViewController.m in Sources */,
+				074D4D04186F408600672AAF /* FSFontCell.m in Sources */,
+				074D4D06186F408D00672AAF /* NSArray+Sorting.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,7 +416,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -379,6 +459,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Fonts/Fonts-Prefix.pch";
 				INFOPLIST_FILE = "Fonts/Fonts-Info.plist";
@@ -392,6 +473,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Fonts/Fonts-Prefix.pch";
 				INFOPLIST_FILE = "Fonts/Fonts-Info.plist";
@@ -403,7 +485,6 @@
 		0794579F18190DC60041DC75 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Fonts.app/Fonts";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -426,7 +507,6 @@
 		079457A018190DC60041DC75 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Fonts.app/Fonts";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -461,6 +541,7 @@
 				0794579D18190DC60041DC75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0794579E18190DC60041DC75 /* Build configuration list for PBXNativeTarget "FontsTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +550,7 @@
 				079457A018190DC60041DC75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
