@@ -12,7 +12,7 @@
 
 + (NSArray *)allFontFamilies;
 
-- (instancetype)initWithName:(NSString *)name;
+- (instancetype)initWithName:(NSString *)name FF_DESIGNATED_INITIALIZER;
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSArray *fonts;

@@ -13,4 +13,6 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+
+    #define FF_DESIGNATED_INITIALIZER __attribute__((objc_designated_initializer))
 #endif

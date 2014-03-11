@@ -52,7 +52,7 @@
 #pragma mark - Useful
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ (%p)> \"%@\"", NSStringFromClass([self class]), self, self.name];
+    return [NSString stringWithFormat:@"<%@ (%p)> \"%@\", %lu fonts", NSStringFromClass([self class]), self, self.name, (unsigned long)self.fonts.count];
 }
 
 - (BOOL)isEqual:(id)object
@@ -77,14 +77,12 @@
 #pragma mark - NSCoding
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
-    self = [super init];
-    if (self) {
-        self.name = [aDecoder decodeObjectForKey:@"name"];
-        self.fonts = [aDecoder decodeObjectForKey:@"fonts"];
-        [self.fonts enumerateObjectsUsingBlock:^(FSFont *font, NSUInteger idx, BOOL *stop) {
-            font.fontFamily = self;
-        }];
-    }
+    self = [self initWithName:[aDecoder decodeObjectForKey:@"name"]];
+    self.fonts = [aDecoder decodeObjectForKey:@"fonts"];
+    [self.fonts setValue:self forKey:@"fontFamily"];
+//    [self.fonts enumerateObjectsUsingBlock:^(FSFont *font, NSUInteger idx, BOOL *stop) {
+//        font.fontFamily = self;
+//    }];
     return self;
 }
 

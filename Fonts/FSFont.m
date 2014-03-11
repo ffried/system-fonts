@@ -103,12 +103,7 @@
 #pragma mark - NSCoding
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
-    self = [super init];
-    if (self) {
-        self.name = [aDecoder decodeObjectForKey:@"name"];
-        //self.fontFamily = [aDecoder decodeObjectForKey:@"fontFamily"];
-    }
-    return self;
+    return [self initWithName:[aDecoder decodeObjectForKey:@"name"]];
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder

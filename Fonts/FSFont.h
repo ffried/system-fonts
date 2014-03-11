@@ -14,7 +14,7 @@
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, weak) FSFontFamily *fontFamily;
 
-- (instancetype)initWithName:(NSString *)name;
+- (instancetype)initWithName:(NSString *)name FF_DESIGNATED_INITIALIZER;
 
 - (UIFont *)font;
 - (UIFont *)fontWithSize:(CGFloat)size;

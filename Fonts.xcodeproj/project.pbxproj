@@ -174,7 +174,6 @@
 		0794577218190DC60041DC75 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				0794578418190DC60041DC75 /* Images.xcassets */,
 				074D4CFD186F399800672AAF /* Model */,
 				074D4CFC186F398F00672AAF /* View Controllers */,
 				074D4CFE186F399E00672AAF /* Categories */,
@@ -188,6 +187,7 @@
 		0794577318190DC60041DC75 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0794578418190DC60041DC75 /* Images.xcassets */,
 				074D4D09186F51EC00672AAF /* iTunesArtwork */,
 				074D4D0A186F51EC00672AAF /* iTunesArtwork@2x */,
 				0794577418190DC60041DC75 /* Fonts-Info.plist */,
@@ -403,7 +403,6 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -419,7 +418,6 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -442,7 +440,6 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
