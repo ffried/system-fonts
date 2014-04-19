@@ -8,6 +8,11 @@
 
 #import "FSFont.h"
 
+@interface FSFont ()
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, weak) FSFontFamily *fontFamily;
+@end
+
 @implementation FSFont
 
 - (instancetype)initWithName:(NSString *)name
@@ -79,6 +84,11 @@
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"<%@ (%p)> \"%@\"", NSStringFromClass([self class]), self, self.name];
+}
+
+- (NSUInteger)hash
+{
+    return self.name.hash ^ self.font.hash;
 }
 
 - (BOOL)isEqual:(id)object

@@ -11,8 +11,8 @@
 
 @interface FSFont : NSObject <NSCopying, NSCoding>
 
-@property (nonatomic, strong) NSString *name;
-@property (nonatomic, weak) FSFontFamily *fontFamily;
+@property (nonatomic, strong, readonly) NSString *name;
+@property (nonatomic, weak, readonly) FSFontFamily *fontFamily;
 
 - (instancetype)initWithName:(NSString *)name NS_DESIGNATED_INITIALIZER;
 

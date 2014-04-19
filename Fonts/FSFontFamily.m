@@ -10,6 +10,11 @@
 #import "FSFont.h"
 #import "NSArray+Sorting.h"
 
+@interface FSFontFamily ()
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSArray *fonts;
+@end
+
 @implementation FSFontFamily
 
 - (instancetype)initWithName:(NSString *)name
@@ -25,7 +30,7 @@
 
 + (NSArray *)allFontFamilies
 {
-    NSMutableArray *tempFonts = [NSMutableArray new];
+    NSMutableArray *tempFonts = [NSMutableArray array];
     [[UIFont familyNames].copy enumerateObjectsUsingBlock:^(NSString *fontFamilyName, NSUInteger idx, BOOL *stop) {
         id family = [[[self class] alloc] initWithName:fontFamilyName];
         [tempFonts addObject:family];
@@ -39,8 +44,9 @@
     if (!_fonts) {
         NSMutableArray *fonts = [[NSMutableArray alloc] init];
         [[UIFont fontNamesForFamilyName:self.name].copy enumerateObjectsUsingBlock:^(NSString *fontName, NSUInteger idx, BOOL *stop) {
-            id font = [[FSFont alloc] initWithName:fontName];
-            [font setFontFamily:self];
+            FSFont *font = [[FSFont alloc] initWithName:fontName];
+            [font setValue:self forKey:@"fontFamily"];
+//            [font setFontFamily:self];
             [fonts addObject:font];
         }];
         
@@ -53,6 +59,11 @@
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"<%@ (%p)> \"%@\", %lu fonts", NSStringFromClass([self class]), self, self.name, (unsigned long)self.fonts.count];
+}
+
+- (NSUInteger)hash
+{
+    return self.name.hash ^ self.fonts.hash;
 }
 
 - (BOOL)isEqual:(id)object
@@ -71,6 +82,7 @@
 {
     id copy = [[[self class] alloc] initWithName:[self.name copyWithZone:zone]];
     [copy setFonts:[self.fonts copyWithZone:zone]];
+    [[copy fonts] setValue:copy forKey:@"fontFamily"];
     return copy;
 }
 
@@ -80,9 +92,6 @@
     self = [self initWithName:[aDecoder decodeObjectForKey:@"name"]];
     self.fonts = [aDecoder decodeObjectForKey:@"fonts"];
     [self.fonts setValue:self forKey:@"fontFamily"];
-//    [self.fonts enumerateObjectsUsingBlock:^(FSFont *font, NSUInteger idx, BOOL *stop) {
-//        font.fontFamily = self;
-//    }];
     return self;
 }
 

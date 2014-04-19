@@ -8,6 +8,7 @@
 
 #import "FSFontDetailViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "NSString+RegEx.h"
 
 static NSString *const kDefaultPreviewText = @"The quick brown fox jumps over the lazy dog.";
 static CGFloat const kDefaultFontSize = 12.0f;
@@ -48,7 +49,7 @@ static CGFloat const kMaximumFontSize = 72.0f;
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
     
     if (self.font) [self setContents];
 }
@@ -107,31 +108,30 @@ static CGFloat const kMaximumFontSize = 72.0f;
         fontSize = MAX(fontSize, kMinimumFontSize);
         [self.sizeChanger setTitle:[NSString stringWithFormat:@"%lu", (unsigned long)fontSize] forSegmentAtIndex:1];
         self.fontPreview.font = [self.font fontWithSize:fontSize];
-        [self adjustFontSwitcher];
+        [self adjustFontSizeChanger];
     }
 }
 
 - (void)showFontSizeAlert
 {
-    UIAlertView *alertView = [[UIAlertView alloc] init];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Font Size"
+                                                        message:@"Please enter the desired font size (between 5 and 72)."
+                                                       delegate:self
+                                              cancelButtonTitle:@"Cancel"
+                                              otherButtonTitles:@"Done", nil];
     alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
-    alertView.title = @"Enter Font Size";
-    alertView.message = @"Please enter the desired font size (between 5 and 72).\nNo check for correctness is made!";
-    NSInteger cancelButton = [alertView addButtonWithTitle:@"Cancel"];
-    alertView.cancelButtonIndex = cancelButton;
-    [alertView addButtonWithTitle:@"Done"];
-    alertView.delegate = self;
+    [alertView textFieldAtIndex:0].keyboardType = UIKeyboardTypeDecimalPad;
     [alertView show];
 }
 
 - (void)increaseFontSize
 {
-    [self setCurrentFontSize:(self.currentFontSize + 1)];
+    [self setCurrentFontSize:(self.currentFontSize + 1.0f)];
 }
 
 - (void)decreaseFontSize
 {
-    [self setCurrentFontSize:(self.currentFontSize - 1)];
+    [self setCurrentFontSize:(self.currentFontSize - 1.0f)];
 }
 
 - (void)adjustFontSizeChanger
@@ -139,6 +139,15 @@ static CGFloat const kMaximumFontSize = 72.0f;
     CGFloat fontSize = self.currentFontSize;
     [self.sizeChanger setEnabled:(fontSize > kMinimumFontSize) forSegmentAtIndex:0];
     [self.sizeChanger setEnabled:(fontSize < kMaximumFontSize) forSegmentAtIndex:2];
+}
+
+- (BOOL)validFontSize:(NSString *)fontSizeText
+{
+    if (fontSizeText.length <= 0) return NO;
+    BOOL matches = [fontSizeText matchesPattern:@"[0-9]+(\\.[0-9]+)?"];
+    if (!matches) return NO;
+    CGFloat size = fontSizeText.floatValue;
+    return size >= 5.0f && size <= 72.0f;
 }
 
 #pragma mark - Actions
@@ -185,10 +194,17 @@ static CGFloat const kMaximumFontSize = 72.0f;
 }
 
 #pragma mark - UIAlertViewDelegate
+- (BOOL)alertViewShouldEnableFirstOtherButton:(UIAlertView *)alertView
+{
+    NSString *fontSizeText = [alertView textFieldAtIndex:0].text;
+    return [self validFontSize:fontSizeText];
+}
+
 - (void)alertView:(UIAlertView *)alertView willDismissWithButtonIndex:(NSInteger)buttonIndex
 {
     if ([[alertView buttonTitleAtIndex:buttonIndex] isEqualToString:@"Done"]) {
-        self.currentFontSize = [alertView textFieldAtIndex:0].text.floatValue;
+        NSString *fontSizeText = [alertView textFieldAtIndex:0].text;
+        self.currentFontSize = fontSizeText.floatValue;
     }
 }
 

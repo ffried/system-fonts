@@ -14,6 +14,8 @@
 {
     // Override point for customization after application launch.
     [[UIView appearance] setTintColor:[UIColor colorWithWhite:0.15f alpha:1.0f]];
+    [[UIView appearanceWhenContainedIn:[UITableViewHeaderFooterView class], nil] setBackgroundColor:[UIColor colorWithWhite:0.25f alpha:0.8f]];
+    [[UILabel appearanceWhenContainedIn:[UITableViewHeaderFooterView class], nil] setBackgroundColor:[UIColor clearColor]];
     [[UILabel appearanceWhenContainedIn:[UITableViewHeaderFooterView class], nil] setTextColor:[UIColor whiteColor]];
     return YES;
 }

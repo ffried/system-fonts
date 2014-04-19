@@ -24,7 +24,7 @@ static NSString *FSFontCellIdentifier = @"FSFontCell";
 {
     [super viewDidLoad];
 
-    [self.navigationController setNavigationBarHidden:YES animated:NO];
+    [self.navigationController setNavigationBarHidden:YES];
     
     self.fontFamilies = [FSFontFamily allFontFamilies];
     
@@ -34,7 +34,7 @@ static NSString *FSFontCellIdentifier = @"FSFontCell";
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES animated:NO];
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
 }
 
 #pragma mark - Table view data source

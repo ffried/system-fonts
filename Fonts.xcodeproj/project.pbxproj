@@ -37,6 +37,7 @@
 		0794579818190DC60041DC75 /* FontsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0794579718190DC60041DC75 /* FontsTests.m */; };
 		079457A3181910400041DC75 /* FSFontsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 079457A2181910400041DC75 /* FSFontsTableViewController.m */; };
 		079457A918191A050041DC75 /* FSFontCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 079457A818191A050041DC75 /* FSFontCell.m */; };
+		07DDF0D21902A79400373138 /* NSString+RegEx.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DDF0D11902A79400373138 /* NSString+RegEx.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,8 @@
 		079457A2181910400041DC75 /* FSFontsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSFontsTableViewController.m; sourceTree = "<group>"; };
 		079457A718191A050041DC75 /* FSFontCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSFontCell.h; sourceTree = "<group>"; };
 		079457A818191A050041DC75 /* FSFontCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSFontCell.m; sourceTree = "<group>"; };
+		07DDF0D01902A79400373138 /* NSString+RegEx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+RegEx.h"; sourceTree = "<group>"; };
+		07DDF0D11902A79400373138 /* NSString+RegEx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+RegEx.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +138,8 @@
 		074D4CFE186F399E00672AAF /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				07DDF0D01902A79400373138 /* NSString+RegEx.h */,
+				07DDF0D11902A79400373138 /* NSString+RegEx.m */,
 				074D4CF5186EDEB100672AAF /* NSArray+Sorting.h */,
 				074D4CF6186EDEB100672AAF /* NSArray+Sorting.m */,
 			);
@@ -323,6 +328,7 @@
 			files = (
 				0794577918190DC60041DC75 /* main.m in Sources */,
 				079457A918191A050041DC75 /* FSFontCell.m in Sources */,
+				07DDF0D21902A79400373138 /* NSString+RegEx.m in Sources */,
 				079457A3181910400041DC75 /* FSFontsTableViewController.m in Sources */,
 				074D4CF4186EDCA500672AAF /* FSFontFamily.m in Sources */,
 				074D4CFA186F0FDA00672AAF /* FSFont.m in Sources */,
