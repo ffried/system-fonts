@@ -10,10 +10,12 @@
 #import "FSFontDetailViewController.h"
 #import "FSFontCell.h"
 #import "FSFontFamily.h"
+#import "FSMainViewController.h"
 
 @interface FSFontsTableViewController ()
 @property (nonatomic, strong) NSArray *fontFamilies;
 @property (nonatomic, strong) NSArray *filteredFontFamiliesArray;
+@property (nonatomic, strong) FSMainViewController *mainVC;
 @end
 
 
@@ -29,11 +31,14 @@ static NSString *FSFontCellIdentifier = @"FSFontCell";
     self.fontFamilies = [FSFontFamily allFontFamilies];
     
     [self.searchDisplayController.searchResultsTableView registerClass:[FSFontCell class] forCellReuseIdentifier:FSFontCellIdentifier];
+    
+    self.mainVC = FSFindMainViewController(self);
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self.mainVC.statusBarView setHidden:NO animated:animated];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
 }
 
@@ -83,7 +88,8 @@ static NSString *FSFontCellIdentifier = @"FSFontCell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (tableView == self.searchDisplayController.searchResultsTableView) {
-        [self performSegueWithIdentifier:@"FSPushFontDetailViewController" sender:[tableView cellForRowAtIndexPath:indexPath]];
+        [self performSegueWithIdentifier:@"FSPushFontDetailViewController"
+                                  sender:[tableView cellForRowAtIndexPath:indexPath]];
     }
 }
 

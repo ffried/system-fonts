@@ -38,6 +38,9 @@
 		079457A3181910400041DC75 /* FSFontsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 079457A2181910400041DC75 /* FSFontsTableViewController.m */; };
 		079457A918191A050041DC75 /* FSFontCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 079457A818191A050041DC75 /* FSFontCell.m */; };
 		07DDF0D21902A79400373138 /* NSString+RegEx.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DDF0D11902A79400373138 /* NSString+RegEx.m */; };
+		07F00E7C197588A900F68E5B /* FSKeyboardConstraintHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F00E7B197588A900F68E5B /* FSKeyboardConstraintHandler.m */; };
+		07F00E7F19758F5400F68E5B /* FSStatusBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F00E7E19758F5400F68E5B /* FSStatusBarView.m */; };
+		07F00E8219759B9F00F68E5B /* FSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F00E8119759B9F00F68E5B /* FSMainViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +87,12 @@
 		079457A818191A050041DC75 /* FSFontCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSFontCell.m; sourceTree = "<group>"; };
 		07DDF0D01902A79400373138 /* NSString+RegEx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+RegEx.h"; sourceTree = "<group>"; };
 		07DDF0D11902A79400373138 /* NSString+RegEx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+RegEx.m"; sourceTree = "<group>"; };
+		07F00E7A197588A900F68E5B /* FSKeyboardConstraintHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKeyboardConstraintHandler.h; sourceTree = "<group>"; };
+		07F00E7B197588A900F68E5B /* FSKeyboardConstraintHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKeyboardConstraintHandler.m; sourceTree = "<group>"; };
+		07F00E7D19758F5400F68E5B /* FSStatusBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSStatusBarView.h; sourceTree = "<group>"; };
+		07F00E7E19758F5400F68E5B /* FSStatusBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSStatusBarView.m; sourceTree = "<group>"; };
+		07F00E8019759B9F00F68E5B /* FSMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSMainViewController.h; sourceTree = "<group>"; };
+		07F00E8119759B9F00F68E5B /* FSMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSMainViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,12 +123,18 @@
 			isa = PBXGroup;
 			children = (
 				0794577E18190DC60041DC75 /* Main.storyboard */,
+				07F00E8019759B9F00F68E5B /* FSMainViewController.h */,
+				07F00E8119759B9F00F68E5B /* FSMainViewController.m */,
+				07F00E7D19758F5400F68E5B /* FSStatusBarView.h */,
+				07F00E7E19758F5400F68E5B /* FSStatusBarView.m */,
 				079457A1181910400041DC75 /* FSFontsTableViewController.h */,
 				079457A2181910400041DC75 /* FSFontsTableViewController.m */,
 				079457A718191A050041DC75 /* FSFontCell.h */,
 				079457A818191A050041DC75 /* FSFontCell.m */,
 				0794578118190DC60041DC75 /* FSFontDetailViewController.h */,
 				0794578218190DC60041DC75 /* FSFontDetailViewController.m */,
+				07F00E7A197588A900F68E5B /* FSKeyboardConstraintHandler.h */,
+				07F00E7B197588A900F68E5B /* FSKeyboardConstraintHandler.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -266,7 +281,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = FS;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = FrieSoft;
 				TargetAttributes = {
 					0794576818190DC60041DC75 = {
@@ -332,8 +347,11 @@
 				079457A3181910400041DC75 /* FSFontsTableViewController.m in Sources */,
 				074D4CF4186EDCA500672AAF /* FSFontFamily.m in Sources */,
 				074D4CFA186F0FDA00672AAF /* FSFont.m in Sources */,
+				07F00E8219759B9F00F68E5B /* FSMainViewController.m in Sources */,
 				074D4CF7186EDEB100672AAF /* NSArray+Sorting.m in Sources */,
+				07F00E7C197588A900F68E5B /* FSKeyboardConstraintHandler.m in Sources */,
 				0794577D18190DC60041DC75 /* FSAppDelegate.m in Sources */,
+				07F00E7F19758F5400F68E5B /* FSStatusBarView.m in Sources */,
 				0794578318190DC60041DC75 /* FSFontDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -395,7 +413,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -432,7 +449,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;

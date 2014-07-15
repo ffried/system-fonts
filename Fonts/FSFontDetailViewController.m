@@ -8,7 +8,9 @@
 
 #import "FSFontDetailViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "FSKeyboardConstraintHandler.h"
 #import "NSString+RegEx.h"
+#import "FSMainViewController.h"
 
 static NSString *const kDefaultPreviewText = @"The quick brown fox jumps over the lazy dog.";
 static CGFloat const kDefaultFontSize = 12.0f;
@@ -18,6 +20,8 @@ static CGFloat const kMaximumFontSize = 72.0f;
 
 @interface FSFontDetailViewController () <UIAlertViewDelegate>
 @property (nonatomic, assign) CGFloat currentFontSize;
+@property (nonatomic, strong) FSKeyboardConstraintHandler *keyboardConstraintHandler;
+@property (nonatomic, strong) FSMainViewController *mainVC;
 
 - (void)setContents;
 
@@ -43,6 +47,10 @@ static CGFloat const kMaximumFontSize = 72.0f;
     self.fontPreview.layer.cornerRadius = 6.0f;
     self.fontPreview.textContainerInset = UIEdgeInsetsMake(10.0f, 5.0f, 10.0f, 5.0f);
     
+    self.keyboardConstraintHandler = [[FSKeyboardConstraintHandler alloc] initWithConstraint:self.keyboardConstraint containingView:self.view];
+    
+    self.mainVC = FSFindMainViewController(self);
+    
     [self resetToDefaults:self.resetButton];
 }
 
@@ -50,6 +58,7 @@ static CGFloat const kMaximumFontSize = 72.0f;
 {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:animated];
+    [self.mainVC.statusBarView setHidden:YES animated:animated];
     
     if (self.font) [self setContents];
 }
