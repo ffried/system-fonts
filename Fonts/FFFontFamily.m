@@ -1,21 +1,21 @@
 //
-//  FSFontFamily.m
+//  FFFontFamily.m
 //  Fonts
 //
 //  Created by Florian Friedrich on 28.12.13.
-//  Copyright (c) 2013 FrieSoft. All rights reserved.
+//  Copyright (c) 2013 Florian Friedrich. All rights reserved.
 //
 
-#import "FSFontFamily.h"
-#import "FSFont.h"
+#import "FFFontFamily.h"
+#import "FFFont.h"
 #import "NSArray+Sorting.h"
 
-@interface FSFontFamily ()
+@interface FFFontFamily ()
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSArray *fonts;
 @end
 
-@implementation FSFontFamily
+@implementation FFFontFamily
 
 - (instancetype)initWithName:(NSString *)name
 {
@@ -32,25 +32,24 @@
 {
     NSMutableArray *tempFonts = [NSMutableArray array];
     [[UIFont familyNames].copy enumerateObjectsUsingBlock:^(NSString *fontFamilyName, NSUInteger idx, BOOL *stop) {
-        id family = [[[self class] alloc] initWithName:fontFamilyName];
+        id family = [[self alloc] initWithName:fontFamilyName];
         [tempFonts addObject:family];
     }];
     
-    return [tempFonts.copy arraySortedByKey:@"name" ascending:YES];
+    return [[NSArray arrayWithArray:tempFonts] arraySortedByKey:@"name" ascending:YES];
 }
 
 - (NSArray *)fonts
 {
     if (!_fonts) {
-        NSMutableArray *fonts = [[NSMutableArray alloc] init];
+        NSMutableArray *fonts = [NSMutableArray array];
         [[UIFont fontNamesForFamilyName:self.name].copy enumerateObjectsUsingBlock:^(NSString *fontName, NSUInteger idx, BOOL *stop) {
-            FSFont *font = [[FSFont alloc] initWithName:fontName];
+            FFFont *font = [[FFFont alloc] initWithName:fontName];
             [font setValue:self forKey:@"fontFamily"];
 //            [font setFontFamily:self];
             [fonts addObject:font];
         }];
-        
-        self.fonts = [fonts.copy arraySortedByKey:@"name" ascending:YES];
+        _fonts = [[NSArray arrayWithArray:fonts] arraySortedByKey:@"name" ascending:YES];
     }
     return _fonts;
 }
@@ -68,8 +67,8 @@
 
 - (BOOL)isEqual:(id)object
 {
-    if ([object isKindOfClass:[FSFontFamily class]]) {
-        FSFontFamily *obj = object;
+    if ([object isKindOfClass:[FFFontFamily class]]) {
+        FFFontFamily *obj = object;
         BOOL sameName = [obj.name isEqualToString:self.name];
         BOOL sameFontCount = obj.fonts.count == self.fonts.count;
         return sameName && sameFontCount;

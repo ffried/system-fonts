@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6185.7" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="jCM-ta-paV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="jCM-ta-paV">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6181.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
         <!--Main View Controller-->
         <scene sceneID="g1b-nm-bTy">
             <objects>
-                <viewController storyboardIdentifier="MainViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jCM-ta-paV" customClass="FSMainViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jCM-ta-paV" customClass="FFMainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xyo-yS-y9r"/>
                         <viewControllerLayoutGuide type="bottom" id="ddp-kR-6BA"/>
@@ -20,10 +20,10 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZTT-tL-Dq4">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <connections>
-                                    <segue destination="1yR-Ws-kkZ" kind="embed" id="tF5-sY-6Bu"/>
+                                    <segue destination="1yR-Ws-kkZ" kind="embed" identifier="FFEmbedMainNavigationControllerSegue" id="tF5-sY-6Bu"/>
                                 </connections>
                             </containerView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wwz-6R-yjc" customClass="FSStatusBarView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wwz-6R-yjc" customClass="FFStatusBarView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="PkY-xS-lGW"/>
@@ -71,7 +71,7 @@
         <!--Font Detail View Controller-->
         <scene sceneID="lj7-Vm-H59">
             <objects>
-                <viewController id="fmA-FO-qVs" customClass="FSFontDetailViewController" sceneMemberID="viewController">
+                <viewController id="fmA-FO-qVs" customClass="FFFontDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="v8P-46-Abe"/>
                         <viewControllerLayoutGuide type="bottom" id="CmV-Pj-qUr"/>
@@ -80,14 +80,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="Xg2-PZ-nmP">
-                                <rect key="frame" x="20" y="72" width="280" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="Xg2-PZ-nmP">
+                                <rect key="frame" x="20" y="52" width="280" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CAk-Qy-qYp">
-                                <rect key="frame" x="20" y="102" width="280" height="410"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CAk-Qy-qYp">
+                                <rect key="frame" x="20" y="80.5" width="280" height="430.5"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <string key="text">The quick brown fox jumps over the lazy dog.
 The quick brown fox jumps over the lazy dog.
@@ -154,7 +154,7 @@ The quick brown fox jumps over the lazy dog.
                             <constraint firstItem="CmV-Pj-qUr" firstAttribute="top" secondItem="Qo1-gT-DHj" secondAttribute="bottom" id="C1O-63-jN2"/>
                             <constraint firstAttribute="trailing" secondItem="Xg2-PZ-nmP" secondAttribute="trailing" constant="20" symbolic="YES" id="EU5-Ip-wgx"/>
                             <constraint firstItem="Qo1-gT-DHj" firstAttribute="leading" secondItem="SGZ-2p-NZB" secondAttribute="leading" id="KnR-yl-egT"/>
-                            <constraint firstItem="Xg2-PZ-nmP" firstAttribute="top" secondItem="v8P-46-Abe" secondAttribute="bottom" constant="20" symbolic="YES" id="ezc-jX-77C"/>
+                            <constraint firstItem="Xg2-PZ-nmP" firstAttribute="top" secondItem="v8P-46-Abe" secondAttribute="bottom" constant="8" symbolic="YES" id="ezc-jX-77C"/>
                             <constraint firstItem="CAk-Qy-qYp" firstAttribute="top" secondItem="Xg2-PZ-nmP" secondAttribute="bottom" constant="8" symbolic="YES" id="mQv-MY-czv"/>
                             <constraint firstItem="CAk-Qy-qYp" firstAttribute="leading" secondItem="SGZ-2p-NZB" secondAttribute="leading" constant="20" symbolic="YES" id="ptw-96-6E4"/>
                             <constraint firstAttribute="trailing" secondItem="CAk-Qy-qYp" secondAttribute="trailing" constant="20" symbolic="YES" id="yq4-L7-R0i"/>
@@ -179,8 +179,8 @@ The quick brown fox jumps over the lazy dog.
         <!--Fonts-->
         <scene sceneID="nIj-OX-Kv5">
             <objects>
-                <tableViewController id="Ibq-YX-duT" customClass="FSFontsTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="i0y-9O-Og8">
+                <tableViewController id="Ibq-YX-duT" customClass="FFFontsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="i0y-9O-Og8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -193,7 +193,7 @@ The quick brown fox jumps over the lazy dog.
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FSFontCell" textLabel="SWD-W6-f8M" style="IBUITableViewCellStyleDefault" id="D3w-HD-wx0" customClass="FSFontCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FFFontCell" textLabel="SWD-W6-f8M" style="IBUITableViewCellStyleDefault" id="D3w-HD-wx0" customClass="FFFontCell">
                                 <rect key="frame" x="0.0" y="66" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D3w-HD-wx0" id="bEW-a6-jaS">
@@ -210,7 +210,7 @@ The quick brown fox jumps over the lazy dog.
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="fmA-FO-qVs" kind="push" identifier="FSPushFontDetailViewController" id="IFL-xP-8Ct"/>
+                                    <segue destination="fmA-FO-qVs" kind="push" identifier="FFPushFontDetailViewController" id="IFL-xP-8Ct"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -242,9 +242,6 @@ The quick brown fox jumps over the lazy dog.
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4">
-            <size key="portraitSize" width="320" height="568"/>
-            <size key="landscapeSize" width="568" height="320"/>
-        </simulatedScreenMetrics>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
 </document>

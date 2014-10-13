@@ -1,16 +1,16 @@
 //
-//  FSFontViewController.h
+//  FFFontViewController.h
 //  Fonts
 //
 //  Created by Florian Friedrich on 24.10.13.
-//  Copyright (c) 2013 FrieSoft. All rights reserved.
+//  Copyright (c) 2013 Florian Friedrich. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "FSFontFamily.h"
-#import "FSFont.h"
+@import Foundation;
+#import "FFFontFamily.h"
+#import "FFFont.h"
 
-@interface FSFontDetailViewController : UIViewController
+@interface FFFontDetailViewController : UIViewController
 
 @property (nonatomic, weak) IBOutlet UILabel *titleLabel;
 @property (nonatomic, weak) IBOutlet UITextView *fontPreview;
@@ -22,7 +22,7 @@
 
 @property (nonatomic, strong) IBOutlet NSLayoutConstraint *keyboardConstraint;
 
-@property (nonatomic, strong) FSFont *font;
+@property (nonatomic, strong) FFFont *font;
 
 - (IBAction)switchFont:(UISegmentedControl *)sender;
 - (IBAction)changeSize:(UISegmentedControl *)sender;

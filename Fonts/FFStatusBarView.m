@@ -1,18 +1,18 @@
 //
-//  FSStatusBarView.m
+//  FFStatusBarView.m
 //  Fonts
 //
 //  Created by Florian Friedrich on 15.7.14.
-//  Copyright (c) 2014 FrieSoft. All rights reserved.
+//  Copyright (c) 2014 Florian Friedrich. All rights reserved.
 //
 
-#import "FSStatusBarView.h"
+#import "FFStatusBarView.h"
 
-@interface FSStatusBarView ()
+@interface FFStatusBarView ()
 @property (nonatomic, strong) UIToolbar *blurBar;
 @end
 
-@implementation FSStatusBarView
+@implementation FFStatusBarView
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -36,7 +36,7 @@
     
     if ([UIDevice currentDevice].systemVersion.floatValue >= 8.0f) {
 #ifdef __IPHONE_8_0
-        UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
+        UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
         UIVisualEffectView *blurView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
         blurView.translatesAutoresizingMaskIntoConstraints = NO;
         [self addSubview:blurView];
@@ -50,10 +50,6 @@
         self.blurBar = [[UIToolbar alloc] initWithFrame:self.bounds];
         [self.layer insertSublayer:self.blurBar.layer atIndex:0];
     }
-}
-
-- (void)layoutSubviews {
-    [super layoutSubviews];
 }
 
 - (void)setHidden:(BOOL)hidden animated:(BOOL)animated {

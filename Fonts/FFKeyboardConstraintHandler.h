@@ -1,14 +1,14 @@
 //
-//  FSKeyboardConstraintHandler.h
+//  FFKeyboardConstraintHandler.h
 //  Fonts
 //
 //  Created by Florian Friedrich on 15.7.14.
-//  Copyright (c) 2014 FrieSoft. All rights reserved.
+//  Copyright (c) 2014 Florian Friedrich. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
-@interface FSKeyboardConstraintHandler : NSObject
+@interface FFKeyboardConstraintHandler : NSObject
 
 @property (nonatomic, strong) NSLayoutConstraint *constraint;
 @property (nonatomic, strong) UIView *containingView;

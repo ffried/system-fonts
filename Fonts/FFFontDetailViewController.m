@@ -1,16 +1,17 @@
 //
-//  FSFontViewController.m
+//  FFFontViewController.m
 //  Fonts
 //
 //  Created by Florian Friedrich on 24.10.13.
-//  Copyright (c) 2013 FrieSoft. All rights reserved.
+//  Copyright (c) 2013 Florian Friedrich. All rights reserved.
 //
 
-#import "FSFontDetailViewController.h"
-#import <QuartzCore/QuartzCore.h>
-#import "FSKeyboardConstraintHandler.h"
+#import "FFFontDetailViewController.h"
+@import QuartzCore;
+
+#import "FFKeyboardConstraintHandler.h"
 #import "NSString+RegEx.h"
-#import "FSMainViewController.h"
+#import "FFMainViewController.h"
 
 static NSString *const kDefaultPreviewText = @"The quick brown fox jumps over the lazy dog.";
 static CGFloat const kDefaultFontSize = 12.0f;
@@ -18,10 +19,10 @@ static CGFloat const kDefaultFontSize = 12.0f;
 static CGFloat const kMinimumFontSize = 5.0f;
 static CGFloat const kMaximumFontSize = 72.0f;
 
-@interface FSFontDetailViewController () <UIAlertViewDelegate>
+@interface FFFontDetailViewController () <UIAlertViewDelegate>
 @property (nonatomic, assign) CGFloat currentFontSize;
-@property (nonatomic, strong) FSKeyboardConstraintHandler *keyboardConstraintHandler;
-@property (nonatomic, strong) FSMainViewController *mainVC;
+@property (nonatomic, strong) FFKeyboardConstraintHandler *keyboardConstraintHandler;
+@property (nonatomic, strong) FFMainViewController *mainVC;
 
 - (void)setContents;
 
@@ -33,8 +34,7 @@ static CGFloat const kMaximumFontSize = 72.0f;
 - (void)adjustFontSizeChanger;
 @end
 
-
-@implementation FSFontDetailViewController
+@implementation FFFontDetailViewController
 
 - (void)viewDidLoad
 {
@@ -47,9 +47,9 @@ static CGFloat const kMaximumFontSize = 72.0f;
     self.fontPreview.layer.cornerRadius = 6.0f;
     self.fontPreview.textContainerInset = UIEdgeInsetsMake(10.0f, 5.0f, 10.0f, 5.0f);
     
-    self.keyboardConstraintHandler = [[FSKeyboardConstraintHandler alloc] initWithConstraint:self.keyboardConstraint containingView:self.view];
+    self.keyboardConstraintHandler = [[FFKeyboardConstraintHandler alloc] initWithConstraint:self.keyboardConstraint containingView:self.view];
     
-    self.mainVC = FSFindMainViewController(self);
+    self.mainVC = FFFindMainViewController(self);
     
     [self resetToDefaults:self.resetButton];
 }
@@ -69,9 +69,9 @@ static CGFloat const kMaximumFontSize = 72.0f;
     [self.fontPreview becomeFirstResponder];
 }
 
-- (void)setFont:(FSFont *)font
+- (void)setFont:(FFFont *)font
 {
-    if (_font != font) {
+    if (![_font isEqual:font]) {
         _font = font;
         [self setContents];
     }
@@ -123,14 +123,36 @@ static CGFloat const kMaximumFontSize = 72.0f;
 
 - (void)showFontSizeAlert
 {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Font Size"
-                                                        message:@"Please enter the desired font size (between 5 and 72)."
-                                                       delegate:self
-                                              cancelButtonTitle:@"Cancel"
-                                              otherButtonTitles:@"Done", nil];
-    alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
-    [alertView textFieldAtIndex:0].keyboardType = UIKeyboardTypeDecimalPad;
-    [alertView show];
+    NSString *title = @"Font Size";
+    NSString *message = @"Please enter the desired font size (between 5 and 72).";
+    NSString *cancelButtonTitle = @"Cancel";
+    NSString *doneButtonTitle = @"Done";
+    // TODO: use UIAlertController
+//    if ([UIAlertController class]) {
+//#ifdef __IPHONE_8_0
+//        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
+//                                                                                 message:message
+//                                                                          preferredStyle:UIAlertControllerStyleAlert];
+//        [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+//            textField.keyboardType = UIKeyboardTypeDecimalPad;
+//        }];
+//        [alertController addAction:[UIAlertAction actionWithTitle:cancelButtonTitle style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+//            
+//        }]];
+//        [alertController addAction:[UIAlertAction actionWithTitle:doneButtonTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+//            
+//        }]];
+//#endif
+//    } else {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
+                                                            message:message
+                                                           delegate:self
+                                                  cancelButtonTitle:cancelButtonTitle
+                                                  otherButtonTitles:doneButtonTitle, nil];
+        alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
+        [alertView textFieldAtIndex:0].keyboardType = UIKeyboardTypeDecimalPad;
+        [alertView show];
+//    }
 }
 
 - (void)increaseFontSize

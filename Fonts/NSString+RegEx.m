@@ -1,9 +1,9 @@
 //
 //  NSString+RegEx.m
-//  SWR3
+//  Fonts
 //
 //  Created by Florian Friedrich on 08.04.14.
-//  Copyright (c) 2014 FrieSoft. All rights reserved.
+//  Copyright (c) 2014 Florian Friedrich. All rights reserved.
 //
 
 #import "NSString+RegEx.h"
@@ -12,7 +12,7 @@
 
 - (NSRegularExpression *)regexWithPattern:(NSString *)pattern
 {
-    __autoreleasing NSError *error;
+    __autoreleasing NSError *error = nil;
     NSRegularExpression *regex = [[NSRegularExpression alloc] initWithPattern:pattern
                                                                       options:kNilOptions
                                                                         error:&error];

@@ -1,19 +1,19 @@
 //
-//  FSFont.m
+//  FFFont.m
 //  Fonts
 //
 //  Created by Florian Friedrich on 28.12.13.
-//  Copyright (c) 2013 FrieSoft. All rights reserved.
+//  Copyright (c) 2013 Florian Friedrich. All rights reserved.
 //
 
-#import "FSFont.h"
+#import "FFFont.h"
 
-@interface FSFont ()
+@interface FFFont ()
 @property (nonatomic, strong) NSString *name;
-@property (nonatomic, weak) FSFontFamily *fontFamily;
+@property (nonatomic, weak) FFFontFamily *fontFamily;
 @end
 
-@implementation FSFont
+@implementation FFFont
 
 - (instancetype)initWithName:(NSString *)name
 {
@@ -24,7 +24,10 @@
     return self;
 }
 
-- (instancetype)init { return [self initWithName:[UIFont systemFontOfSize:[UIFont systemFontSize]].fontName]; }
+- (instancetype)init
+{
+    return [self initWithName:[UIFont systemFontOfSize:[UIFont systemFontSize]].fontName];
+}
 
 #pragma mark - UIFont generators
 - (UIFont *)font
@@ -64,7 +67,7 @@
     return NO;
 }
 
-- (FSFont *)previousFont
+- (FFFont *)previousFont
 {
     if (!self.hasPreviousFont) return nil;
     
@@ -72,7 +75,7 @@
     return self.fontFamily.fonts[index - 1];
 }
 
-- (FSFont *)nextFont
+- (FFFont *)nextFont
 {
     if (!self.hasNextFont) return nil;
     
@@ -93,8 +96,8 @@
 
 - (BOOL)isEqual:(id)object
 {
-    if ([object isKindOfClass:[FSFont class]]) {
-        FSFont *obj = object;
+    if ([object isKindOfClass:[FFFont class]]) {
+        FFFont *obj = object;
         BOOL sameName = [obj.name isEqualToString:self.name];
         BOOL sameFamily = [obj.fontFamily.name isEqualToString:self.fontFamily.name];
         return sameFamily && sameName;

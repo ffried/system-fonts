@@ -1,26 +1,26 @@
 //
-//  FSFontsTableViewController.m
+//  FFFontsTableViewController.m
 //  Fonts
 //
 //  Created by Florian Friedrich on 24.10.13.
-//  Copyright (c) 2013 FrieSoft. All rights reserved.
+//  Copyright (c) 2013 Florian Friedrich. All rights reserved.
 //
 
-#import "FSFontsTableViewController.h"
-#import "FSFontDetailViewController.h"
-#import "FSFontCell.h"
-#import "FSFontFamily.h"
-#import "FSMainViewController.h"
+#import "FFFontsTableViewController.h"
+#import "FFFontDetailViewController.h"
+#import "FFFontCell.h"
+#import "FFFontFamily.h"
+#import "FFMainViewController.h"
 
-@interface FSFontsTableViewController ()
+@interface FFFontsTableViewController ()
 @property (nonatomic, strong) NSArray *fontFamilies;
 @property (nonatomic, strong) NSArray *filteredFontFamiliesArray;
-@property (nonatomic, strong) FSMainViewController *mainVC;
+@property (nonatomic, strong) FFMainViewController *mainVC;
 @end
 
-
-static NSString *FSFontCellIdentifier = @"FSFontCell";
-@implementation FSFontsTableViewController
+static NSString *const FFFontCellIdentifier = @"FFFontCell";
+static NSString *const FFPushFontDetailViewControllerSegueIdentifier = @"FFPushFontDetailViewController";
+@implementation FFFontsTableViewController
 
 - (void)viewDidLoad
 {
@@ -28,11 +28,11 @@ static NSString *FSFontCellIdentifier = @"FSFontCell";
 
     [self.navigationController setNavigationBarHidden:YES];
     
-    self.fontFamilies = [FSFontFamily allFontFamilies];
+    self.fontFamilies = [FFFontFamily allFontFamilies];
     
-    [self.searchDisplayController.searchResultsTableView registerClass:[FSFontCell class] forCellReuseIdentifier:FSFontCellIdentifier];
+    [self.searchDisplayController.searchResultsTableView registerClass:[FFFontCell class] forCellReuseIdentifier:FFFontCellIdentifier];
     
-    self.mainVC = FSFindMainViewController(self);
+    self.mainVC = FFFindMainViewController(self);
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -43,7 +43,6 @@ static NSString *FSFontCellIdentifier = @"FSFontCell";
 }
 
 #pragma mark - Table view data source
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
@@ -55,40 +54,38 @@ static NSString *FSFontCellIdentifier = @"FSFontCell";
 {
     // Return the number of rows in the section.
     BOOL searchTableView = (tableView == self.searchDisplayController.searchResultsTableView);
-    return (searchTableView) ? _filteredFontFamiliesArray.count : ((FSFontFamily *)_fontFamilies[section]).fonts.count;
+    return (searchTableView) ? _filteredFontFamiliesArray.count : ((FFFontFamily *)_fontFamilies[section]).fonts.count;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     BOOL searchTableView = (tableView == self.searchDisplayController.searchResultsTableView);
-    return (searchTableView) ? nil : ((FSFontFamily *)_fontFamilies[section]).name;
+    return (searchTableView) ? nil : ((FFFontFamily *)_fontFamilies[section]).name;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     BOOL searchTableView = (tableView == self.searchDisplayController.searchResultsTableView);
     
-    FSFontCell *cell = [tableView dequeueReusableCellWithIdentifier:FSFontCellIdentifier forIndexPath:indexPath];
-    if (!cell) cell = [[FSFontCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:FSFontCellIdentifier];
+    FFFontCell *cell = [tableView dequeueReusableCellWithIdentifier:FFFontCellIdentifier forIndexPath:indexPath];
+    if (!cell) cell = [[FFFontCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:FFFontCellIdentifier];
     
-    FSFont *font = nil;
+    FFFont *font = nil;
     if (!searchTableView) {
-        font = ((FSFontFamily *)_fontFamilies[indexPath.section]).fonts[indexPath.row];
+        font = ((FFFontFamily *)_fontFamilies[indexPath.section]).fonts[indexPath.row];
     } else {
         font = _filteredFontFamiliesArray[indexPath.row];
     }
-    [cell configureWithFSFont:font];
+    [cell configureWithFFFont:font];
     
     return cell;
 }
 
 #pragma mark - Navigation
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (tableView == self.searchDisplayController.searchResultsTableView) {
-        [self performSegueWithIdentifier:@"FSPushFontDetailViewController"
+        [self performSegueWithIdentifier:FFPushFontDetailViewControllerSegueIdentifier
                                   sender:[tableView cellForRowAtIndexPath:indexPath]];
     }
 }
@@ -98,21 +95,20 @@ static NSString *FSFontCellIdentifier = @"FSFontCell";
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    if ([segue.identifier isEqualToString:@"FSPushFontDetailViewController"]) {
-        FSFontDetailViewController *fontDetail = segue.destinationViewController;
-        if ([sender isKindOfClass:[FSFontCell class]]) {
-            fontDetail.font = [(FSFontCell *)sender font];
+    if ([segue.identifier isEqualToString:FFPushFontDetailViewControllerSegueIdentifier]) {
+        FFFontDetailViewController *fontDetail = segue.destinationViewController;
+        if ([sender isKindOfClass:[FFFontCell class]]) {
+            fontDetail.font = [(FFFontCell *)sender font];
         }
     }
 }
 
 #pragma mark - Search
-
 - (void)searchForFontsWithName:(NSString *)fontName
 {
     NSMutableArray *foundFonts = [NSMutableArray new];
     NSPredicate *filterPredicate = [NSPredicate predicateWithFormat:@"name contains[c] %@", fontName];
-    [_fontFamilies enumerateObjectsUsingBlock:^(FSFontFamily *fontFamily, NSUInteger idx, BOOL *stop) {
+    [_fontFamilies enumerateObjectsUsingBlock:^(FFFontFamily *fontFamily, NSUInteger idx, BOOL *stop) {
         [foundFonts addObjectsFromArray:[fontFamily.fonts filteredArrayUsingPredicate:filterPredicate]];
     }];
     

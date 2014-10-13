@@ -1,18 +1,18 @@
 //
-//  FSFont.h
+//  FFFont.h
 //  Fonts
 //
 //  Created by Florian Friedrich on 28.12.13.
-//  Copyright (c) 2013 FrieSoft. All rights reserved.
+//  Copyright (c) 2013 Florian Friedrich. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "FSFontFamily.h"
+@import Foundation;
+#import "FFFontFamily.h"
 
-@interface FSFont : NSObject <NSCopying, NSCoding>
+@interface FFFont : NSObject <NSCopying, NSCoding>
 
 @property (nonatomic, strong, readonly) NSString *name;
-@property (nonatomic, weak, readonly) FSFontFamily *fontFamily;
+@property (nonatomic, weak, readonly) FFFontFamily *fontFamily;
 
 - (instancetype)initWithName:(NSString *)name NS_DESIGNATED_INITIALIZER;
 
@@ -22,7 +22,7 @@
 - (BOOL)hasPreviousFont;
 - (BOOL)hasNextFont;
 
-- (FSFont *)previousFont;
-- (FSFont *)nextFont;
+- (FFFont *)previousFont;
+- (FFFont *)nextFont;
 
 @end

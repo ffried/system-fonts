@@ -1,14 +1,14 @@
 //
-//  FSAppDelegate.m
+//  FFAppDelegate.m
 //  Fonts
 //
 //  Created by Florian Friedrich on 24.10.13.
-//  Copyright (c) 2013 FrieSoft. All rights reserved.
+//  Copyright (c) 2013 Florian Friedrich. All rights reserved.
 //
 
-#import "FSAppDelegate.h"
+#import "FFAppDelegate.h"
 
-@implementation FSAppDelegate
+@implementation FFAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

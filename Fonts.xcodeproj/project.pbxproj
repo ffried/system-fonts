@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		074D4CF4186EDCA500672AAF /* FSFontFamily.m in Sources */ = {isa = PBXBuildFile; fileRef = 074D4CF3186EDCA500672AAF /* FSFontFamily.m */; };
+		074D4CF4186EDCA500672AAF /* FFFontFamily.m in Sources */ = {isa = PBXBuildFile; fileRef = 074D4CF3186EDCA500672AAF /* FFFontFamily.m */; };
 		074D4CF7186EDEB100672AAF /* NSArray+Sorting.m in Sources */ = {isa = PBXBuildFile; fileRef = 074D4CF6186EDEB100672AAF /* NSArray+Sorting.m */; };
-		074D4CFA186F0FDA00672AAF /* FSFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 074D4CF9186F0FDA00672AAF /* FSFont.m */; };
-		074D4CFB186F0FDA00672AAF /* FSFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 074D4CF9186F0FDA00672AAF /* FSFont.m */; };
-		074D4D03186F408100672AAF /* FSFontsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 079457A2181910400041DC75 /* FSFontsTableViewController.m */; };
-		074D4D04186F408600672AAF /* FSFontCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 079457A818191A050041DC75 /* FSFontCell.m */; };
-		074D4D05186F408A00672AAF /* FSFontDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0794578218190DC60041DC75 /* FSFontDetailViewController.m */; };
+		074D4CFA186F0FDA00672AAF /* FFFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 074D4CF9186F0FDA00672AAF /* FFFont.m */; };
+		074D4CFB186F0FDA00672AAF /* FFFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 074D4CF9186F0FDA00672AAF /* FFFont.m */; };
+		074D4D03186F408100672AAF /* FFFontsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 079457A2181910400041DC75 /* FFFontsTableViewController.m */; };
+		074D4D04186F408600672AAF /* FFFontCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 079457A818191A050041DC75 /* FFFontCell.m */; };
+		074D4D05186F408A00672AAF /* FFFontDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0794578218190DC60041DC75 /* FFFontDetailViewController.m */; };
 		074D4D06186F408D00672AAF /* NSArray+Sorting.m in Sources */ = {isa = PBXBuildFile; fileRef = 074D4CF6186EDEB100672AAF /* NSArray+Sorting.m */; };
-		074D4D07186F409000672AAF /* FSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0794577C18190DC60041DC75 /* FSAppDelegate.m */; };
-		074D4D08186F409600672AAF /* FSFontFamily.m in Sources */ = {isa = PBXBuildFile; fileRef = 074D4CF3186EDCA500672AAF /* FSFontFamily.m */; };
+		074D4D07186F409000672AAF /* FFAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0794577C18190DC60041DC75 /* FFAppDelegate.m */; };
+		074D4D08186F409600672AAF /* FFFontFamily.m in Sources */ = {isa = PBXBuildFile; fileRef = 074D4CF3186EDCA500672AAF /* FFFontFamily.m */; };
 		074D4D0B186F51EC00672AAF /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 074D4D09186F51EC00672AAF /* iTunesArtwork */; };
 		074D4D0C186F51EC00672AAF /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 074D4D09186F51EC00672AAF /* iTunesArtwork */; };
 		074D4D0D186F51EC00672AAF /* iTunesArtwork@2x in Resources */ = {isa = PBXBuildFile; fileRef = 074D4D0A186F51EC00672AAF /* iTunesArtwork@2x */; };
@@ -26,21 +26,21 @@
 		0794577118190DC60041DC75 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0794577018190DC60041DC75 /* UIKit.framework */; };
 		0794577718190DC60041DC75 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0794577518190DC60041DC75 /* InfoPlist.strings */; };
 		0794577918190DC60041DC75 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0794577818190DC60041DC75 /* main.m */; };
-		0794577D18190DC60041DC75 /* FSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0794577C18190DC60041DC75 /* FSAppDelegate.m */; };
+		0794577D18190DC60041DC75 /* FFAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0794577C18190DC60041DC75 /* FFAppDelegate.m */; };
 		0794578018190DC60041DC75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0794577E18190DC60041DC75 /* Main.storyboard */; };
-		0794578318190DC60041DC75 /* FSFontDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0794578218190DC60041DC75 /* FSFontDetailViewController.m */; };
+		0794578318190DC60041DC75 /* FFFontDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0794578218190DC60041DC75 /* FFFontDetailViewController.m */; };
 		0794578518190DC60041DC75 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0794578418190DC60041DC75 /* Images.xcassets */; };
 		0794578C18190DC60041DC75 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0794578B18190DC60041DC75 /* XCTest.framework */; };
 		0794578D18190DC60041DC75 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0794576C18190DC60041DC75 /* Foundation.framework */; };
 		0794578E18190DC60041DC75 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0794577018190DC60041DC75 /* UIKit.framework */; };
 		0794579618190DC60041DC75 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0794579418190DC60041DC75 /* InfoPlist.strings */; };
 		0794579818190DC60041DC75 /* FontsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0794579718190DC60041DC75 /* FontsTests.m */; };
-		079457A3181910400041DC75 /* FSFontsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 079457A2181910400041DC75 /* FSFontsTableViewController.m */; };
-		079457A918191A050041DC75 /* FSFontCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 079457A818191A050041DC75 /* FSFontCell.m */; };
+		079457A3181910400041DC75 /* FFFontsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 079457A2181910400041DC75 /* FFFontsTableViewController.m */; };
+		079457A918191A050041DC75 /* FFFontCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 079457A818191A050041DC75 /* FFFontCell.m */; };
 		07DDF0D21902A79400373138 /* NSString+RegEx.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DDF0D11902A79400373138 /* NSString+RegEx.m */; };
-		07F00E7C197588A900F68E5B /* FSKeyboardConstraintHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F00E7B197588A900F68E5B /* FSKeyboardConstraintHandler.m */; };
-		07F00E7F19758F5400F68E5B /* FSStatusBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F00E7E19758F5400F68E5B /* FSStatusBarView.m */; };
-		07F00E8219759B9F00F68E5B /* FSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F00E8119759B9F00F68E5B /* FSMainViewController.m */; };
+		07F00E7C197588A900F68E5B /* FFKeyboardConstraintHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F00E7B197588A900F68E5B /* FFKeyboardConstraintHandler.m */; };
+		07F00E7F19758F5400F68E5B /* FFStatusBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F00E7E19758F5400F68E5B /* FFStatusBarView.m */; };
+		07F00E8219759B9F00F68E5B /* FFMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F00E8119759B9F00F68E5B /* FFMainViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,13 +53,26 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		07AE668D19C07D9000F67C00 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		074D4CF2186EDCA500672AAF /* FSFontFamily.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSFontFamily.h; sourceTree = "<group>"; };
-		074D4CF3186EDCA500672AAF /* FSFontFamily.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSFontFamily.m; sourceTree = "<group>"; };
+		074D4CF2186EDCA500672AAF /* FFFontFamily.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFontFamily.h; sourceTree = "<group>"; };
+		074D4CF3186EDCA500672AAF /* FFFontFamily.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFontFamily.m; sourceTree = "<group>"; };
 		074D4CF5186EDEB100672AAF /* NSArray+Sorting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Sorting.h"; sourceTree = "<group>"; };
 		074D4CF6186EDEB100672AAF /* NSArray+Sorting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Sorting.m"; sourceTree = "<group>"; };
-		074D4CF8186F0FDA00672AAF /* FSFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSFont.h; sourceTree = "<group>"; };
-		074D4CF9186F0FDA00672AAF /* FSFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSFont.m; sourceTree = "<group>"; };
+		074D4CF8186F0FDA00672AAF /* FFFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFont.h; sourceTree = "<group>"; };
+		074D4CF9186F0FDA00672AAF /* FFFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFont.m; sourceTree = "<group>"; };
 		074D4D09186F51EC00672AAF /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 		074D4D0A186F51EC00672AAF /* iTunesArtwork@2x */ = {isa = PBXFileReference; lastKnownFileType = file; path = "iTunesArtwork@2x"; sourceTree = "<group>"; };
 		0794576918190DC60041DC75 /* Fonts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fonts.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,29 +83,29 @@
 		0794577618190DC60041DC75 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0794577818190DC60041DC75 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0794577A18190DC60041DC75 /* Fonts-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Fonts-Prefix.pch"; sourceTree = "<group>"; };
-		0794577B18190DC60041DC75 /* FSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSAppDelegate.h; sourceTree = "<group>"; };
-		0794577C18190DC60041DC75 /* FSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSAppDelegate.m; sourceTree = "<group>"; };
+		0794577B18190DC60041DC75 /* FFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFAppDelegate.h; sourceTree = "<group>"; };
+		0794577C18190DC60041DC75 /* FFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFAppDelegate.m; sourceTree = "<group>"; };
 		0794577F18190DC60041DC75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0794578118190DC60041DC75 /* FSFontDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSFontDetailViewController.h; sourceTree = "<group>"; };
-		0794578218190DC60041DC75 /* FSFontDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSFontDetailViewController.m; sourceTree = "<group>"; };
+		0794578118190DC60041DC75 /* FFFontDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FFFontDetailViewController.h; sourceTree = "<group>"; };
+		0794578218190DC60041DC75 /* FFFontDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FFFontDetailViewController.m; sourceTree = "<group>"; };
 		0794578418190DC60041DC75 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0794578A18190DC60041DC75 /* FontsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FontsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0794578B18190DC60041DC75 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		0794579318190DC60041DC75 /* FontsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FontsTests-Info.plist"; sourceTree = "<group>"; };
 		0794579518190DC60041DC75 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0794579718190DC60041DC75 /* FontsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FontsTests.m; sourceTree = "<group>"; };
-		079457A1181910400041DC75 /* FSFontsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSFontsTableViewController.h; sourceTree = "<group>"; };
-		079457A2181910400041DC75 /* FSFontsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSFontsTableViewController.m; sourceTree = "<group>"; };
-		079457A718191A050041DC75 /* FSFontCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSFontCell.h; sourceTree = "<group>"; };
-		079457A818191A050041DC75 /* FSFontCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSFontCell.m; sourceTree = "<group>"; };
+		079457A1181910400041DC75 /* FFFontsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFontsTableViewController.h; sourceTree = "<group>"; };
+		079457A2181910400041DC75 /* FFFontsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFontsTableViewController.m; sourceTree = "<group>"; };
+		079457A718191A050041DC75 /* FFFontCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFontCell.h; sourceTree = "<group>"; };
+		079457A818191A050041DC75 /* FFFontCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFontCell.m; sourceTree = "<group>"; };
 		07DDF0D01902A79400373138 /* NSString+RegEx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+RegEx.h"; sourceTree = "<group>"; };
 		07DDF0D11902A79400373138 /* NSString+RegEx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+RegEx.m"; sourceTree = "<group>"; };
-		07F00E7A197588A900F68E5B /* FSKeyboardConstraintHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSKeyboardConstraintHandler.h; sourceTree = "<group>"; };
-		07F00E7B197588A900F68E5B /* FSKeyboardConstraintHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSKeyboardConstraintHandler.m; sourceTree = "<group>"; };
-		07F00E7D19758F5400F68E5B /* FSStatusBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSStatusBarView.h; sourceTree = "<group>"; };
-		07F00E7E19758F5400F68E5B /* FSStatusBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSStatusBarView.m; sourceTree = "<group>"; };
-		07F00E8019759B9F00F68E5B /* FSMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSMainViewController.h; sourceTree = "<group>"; };
-		07F00E8119759B9F00F68E5B /* FSMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSMainViewController.m; sourceTree = "<group>"; };
+		07F00E7A197588A900F68E5B /* FFKeyboardConstraintHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFKeyboardConstraintHandler.h; sourceTree = "<group>"; };
+		07F00E7B197588A900F68E5B /* FFKeyboardConstraintHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFKeyboardConstraintHandler.m; sourceTree = "<group>"; };
+		07F00E7D19758F5400F68E5B /* FFStatusBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFStatusBarView.h; sourceTree = "<group>"; };
+		07F00E7E19758F5400F68E5B /* FFStatusBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFStatusBarView.m; sourceTree = "<group>"; };
+		07F00E8019759B9F00F68E5B /* FFMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFMainViewController.h; sourceTree = "<group>"; };
+		07F00E8119759B9F00F68E5B /* FFMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFMainViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,18 +136,18 @@
 			isa = PBXGroup;
 			children = (
 				0794577E18190DC60041DC75 /* Main.storyboard */,
-				07F00E8019759B9F00F68E5B /* FSMainViewController.h */,
-				07F00E8119759B9F00F68E5B /* FSMainViewController.m */,
-				07F00E7D19758F5400F68E5B /* FSStatusBarView.h */,
-				07F00E7E19758F5400F68E5B /* FSStatusBarView.m */,
-				079457A1181910400041DC75 /* FSFontsTableViewController.h */,
-				079457A2181910400041DC75 /* FSFontsTableViewController.m */,
-				079457A718191A050041DC75 /* FSFontCell.h */,
-				079457A818191A050041DC75 /* FSFontCell.m */,
-				0794578118190DC60041DC75 /* FSFontDetailViewController.h */,
-				0794578218190DC60041DC75 /* FSFontDetailViewController.m */,
-				07F00E7A197588A900F68E5B /* FSKeyboardConstraintHandler.h */,
-				07F00E7B197588A900F68E5B /* FSKeyboardConstraintHandler.m */,
+				07F00E8019759B9F00F68E5B /* FFMainViewController.h */,
+				07F00E8119759B9F00F68E5B /* FFMainViewController.m */,
+				07F00E7D19758F5400F68E5B /* FFStatusBarView.h */,
+				07F00E7E19758F5400F68E5B /* FFStatusBarView.m */,
+				079457A1181910400041DC75 /* FFFontsTableViewController.h */,
+				079457A2181910400041DC75 /* FFFontsTableViewController.m */,
+				079457A718191A050041DC75 /* FFFontCell.h */,
+				079457A818191A050041DC75 /* FFFontCell.m */,
+				0794578118190DC60041DC75 /* FFFontDetailViewController.h */,
+				0794578218190DC60041DC75 /* FFFontDetailViewController.m */,
+				07F00E7A197588A900F68E5B /* FFKeyboardConstraintHandler.h */,
+				07F00E7B197588A900F68E5B /* FFKeyboardConstraintHandler.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -142,10 +155,10 @@
 		074D4CFD186F399800672AAF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				074D4CF2186EDCA500672AAF /* FSFontFamily.h */,
-				074D4CF3186EDCA500672AAF /* FSFontFamily.m */,
-				074D4CF8186F0FDA00672AAF /* FSFont.h */,
-				074D4CF9186F0FDA00672AAF /* FSFont.m */,
+				074D4CF2186EDCA500672AAF /* FFFontFamily.h */,
+				074D4CF3186EDCA500672AAF /* FFFontFamily.m */,
+				074D4CF8186F0FDA00672AAF /* FFFont.h */,
+				074D4CF9186F0FDA00672AAF /* FFFont.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -197,8 +210,8 @@
 				074D4CFD186F399800672AAF /* Model */,
 				074D4CFC186F398F00672AAF /* View Controllers */,
 				074D4CFE186F399E00672AAF /* Categories */,
-				0794577B18190DC60041DC75 /* FSAppDelegate.h */,
-				0794577C18190DC60041DC75 /* FSAppDelegate.m */,
+				0794577B18190DC60041DC75 /* FFAppDelegate.h */,
+				0794577C18190DC60041DC75 /* FFAppDelegate.m */,
 				0794577318190DC60041DC75 /* Supporting Files */,
 			);
 			path = Fonts;
@@ -246,6 +259,7 @@
 				0794576518190DC60041DC75 /* Sources */,
 				0794576618190DC60041DC75 /* Frameworks */,
 				0794576718190DC60041DC75 /* Resources */,
+				07AE668D19C07D9000F67C00 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
@@ -280,9 +294,9 @@
 		0794576118190DC60041DC75 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = FS;
+				CLASSPREFIX = FF;
 				LastUpgradeCheck = 0600;
-				ORGANIZATIONNAME = FrieSoft;
+				ORGANIZATIONNAME = "Florian Friedrich";
 				TargetAttributes = {
 					0794576818190DC60041DC75 = {
 						DevelopmentTeam = 8AVR59FNSV;
@@ -342,17 +356,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				0794577918190DC60041DC75 /* main.m in Sources */,
-				079457A918191A050041DC75 /* FSFontCell.m in Sources */,
+				079457A918191A050041DC75 /* FFFontCell.m in Sources */,
 				07DDF0D21902A79400373138 /* NSString+RegEx.m in Sources */,
-				079457A3181910400041DC75 /* FSFontsTableViewController.m in Sources */,
-				074D4CF4186EDCA500672AAF /* FSFontFamily.m in Sources */,
-				074D4CFA186F0FDA00672AAF /* FSFont.m in Sources */,
-				07F00E8219759B9F00F68E5B /* FSMainViewController.m in Sources */,
+				079457A3181910400041DC75 /* FFFontsTableViewController.m in Sources */,
+				074D4CF4186EDCA500672AAF /* FFFontFamily.m in Sources */,
+				074D4CFA186F0FDA00672AAF /* FFFont.m in Sources */,
+				07F00E8219759B9F00F68E5B /* FFMainViewController.m in Sources */,
 				074D4CF7186EDEB100672AAF /* NSArray+Sorting.m in Sources */,
-				07F00E7C197588A900F68E5B /* FSKeyboardConstraintHandler.m in Sources */,
-				0794577D18190DC60041DC75 /* FSAppDelegate.m in Sources */,
-				07F00E7F19758F5400F68E5B /* FSStatusBarView.m in Sources */,
-				0794578318190DC60041DC75 /* FSFontDetailViewController.m in Sources */,
+				07F00E7C197588A900F68E5B /* FFKeyboardConstraintHandler.m in Sources */,
+				0794577D18190DC60041DC75 /* FFAppDelegate.m in Sources */,
+				07F00E7F19758F5400F68E5B /* FFStatusBarView.m in Sources */,
+				0794578318190DC60041DC75 /* FFFontDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,12 +375,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0794579818190DC60041DC75 /* FontsTests.m in Sources */,
-				074D4D07186F409000672AAF /* FSAppDelegate.m in Sources */,
-				074D4CFB186F0FDA00672AAF /* FSFont.m in Sources */,
-				074D4D08186F409600672AAF /* FSFontFamily.m in Sources */,
-				074D4D05186F408A00672AAF /* FSFontDetailViewController.m in Sources */,
-				074D4D03186F408100672AAF /* FSFontsTableViewController.m in Sources */,
-				074D4D04186F408600672AAF /* FSFontCell.m in Sources */,
+				074D4D07186F409000672AAF /* FFAppDelegate.m in Sources */,
+				074D4CFB186F0FDA00672AAF /* FFFont.m in Sources */,
+				074D4D08186F409600672AAF /* FFFontFamily.m in Sources */,
+				074D4D05186F408A00672AAF /* FFFontDetailViewController.m in Sources */,
+				074D4D03186F408100672AAF /* FFFontsTableViewController.m in Sources */,
+				074D4D04186F408600672AAF /* FFFontCell.m in Sources */,
 				074D4D06186F408D00672AAF /* NSArray+Sorting.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,11 +496,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Fonts/Fonts-Prefix.pch";
 				INFOPLIST_FILE = "Fonts/Fonts-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8A3542C9-5747-4FE7-A83E-2544121F9079";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -496,12 +511,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Fonts/Fonts-Prefix.pch";
 				INFOPLIST_FILE = "Fonts/Fonts-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8A3542C9-5747-4FE7-A83E-2544121F9079";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

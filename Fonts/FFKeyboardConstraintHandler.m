@@ -1,18 +1,14 @@
 //
-//  FSKeyboardConstraintHandler.m
+//  FFKeyboardConstraintHandler.m
 //  Fonts
 //
 //  Created by Florian Friedrich on 15.7.14.
-//  Copyright (c) 2014 FrieSoft. All rights reserved.
+//  Copyright (c) 2014 Florian Friedrich. All rights reserved.
 //
 
-#import "FSKeyboardConstraintHandler.h"
+#import "FFKeyboardConstraintHandler.h"
 
-@interface FSKeyboardConstraintHandler ()
-
-@end
-
-@implementation FSKeyboardConstraintHandler
+@implementation FFKeyboardConstraintHandler
 
 - (instancetype)initWithConstraint:(NSLayoutConstraint *)constraint containingView:(UIView *)view {
     self = [super init];
