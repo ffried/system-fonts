@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="jCM-ta-paV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8152.3" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="jCM-ta-paV">
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8124.4"/>
     </dependencies>
     <scenes>
         <!--Main View Controller-->
@@ -87,7 +87,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CAk-Qy-qYp">
-                                <rect key="frame" x="20" y="80.5" width="280" height="430.5"/>
+                                <rect key="frame" x="20" y="80" width="280" height="430.5"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <string key="text">The quick brown fox jumps over the lazy dog.
 The quick brown fox jumps over the lazy dog.
@@ -102,8 +102,8 @@ The quick brown fox jumps over the lazy dog.
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qo1-gT-DHj">
                                 <rect key="frame" x="0.0" y="519" width="320" height="49"/>
                                 <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" momentary="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hqi-gV-dEy">
-                                        <rect key="frame" x="123" y="11" width="89" height="29"/>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" momentary="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hqi-gV-dEy">
+                                        <rect key="frame" x="117" y="11" width="86" height="29"/>
                                         <segments>
                                             <segment title="-"/>
                                             <segment title="12"/>
@@ -113,7 +113,7 @@ The quick brown fox jumps over the lazy dog.
                                             <action selector="changeSize:" destination="fmA-FO-qVs" eventType="valueChanged" id="7Qo-No-azF"/>
                                         </connections>
                                     </segmentedControl>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" momentary="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5w6-Ri-w2t">
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" momentary="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5w6-Ri-w2t">
                                         <rect key="frame" x="20" y="11" width="55" height="29"/>
                                         <segments>
                                             <segment title="▲"/>
@@ -124,7 +124,7 @@ The quick brown fox jumps over the lazy dog.
                                         </connections>
                                     </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kON-9L-D3I">
-                                        <rect key="frame" x="260" y="10" width="40" height="30"/>
+                                        <rect key="frame" x="273" y="10" width="39" height="30"/>
                                         <state key="normal" title="Reset">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -135,14 +135,15 @@ The quick brown fox jumps over the lazy dog.
                                 </subviews>
                                 <color key="backgroundColor" red="0.84313732385635376" green="0.85882359743118286" blue="0.87058830261230469" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
-                                    <constraint firstItem="Hqi-gV-dEy" firstAttribute="leading" secondItem="5w6-Ri-w2t" secondAttribute="trailing" constant="48" id="4bv-gq-RE1"/>
+                                    <constraint firstItem="Hqi-gV-dEy" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5w6-Ri-w2t" secondAttribute="trailing" constant="25" id="4bv-gq-RE1"/>
+                                    <constraint firstItem="Hqi-gV-dEy" firstAttribute="centerX" secondItem="Qo1-gT-DHj" secondAttribute="centerX" id="8NF-lH-bp1"/>
                                     <constraint firstAttribute="centerY" secondItem="Hqi-gV-dEy" secondAttribute="centerY" id="HT4-Tr-On4"/>
-                                    <constraint firstAttribute="trailing" secondItem="kON-9L-D3I" secondAttribute="trailing" constant="20" symbolic="YES" id="Hmx-lQ-j8y"/>
+                                    <constraint firstAttribute="trailing" secondItem="kON-9L-D3I" secondAttribute="trailing" constant="8" symbolic="YES" id="Hmx-lQ-j8y"/>
                                     <constraint firstAttribute="centerY" secondItem="kON-9L-D3I" secondAttribute="centerY" id="Um1-K3-Yw6"/>
                                     <constraint firstAttribute="height" constant="49" id="W6Y-UI-Is6"/>
                                     <constraint firstItem="5w6-Ri-w2t" firstAttribute="leading" secondItem="Qo1-gT-DHj" secondAttribute="leading" constant="20" symbolic="YES" id="gB5-9N-Lsc"/>
                                     <constraint firstAttribute="centerY" secondItem="5w6-Ri-w2t" secondAttribute="centerY" id="ipz-Vi-3hf"/>
-                                    <constraint firstItem="kON-9L-D3I" firstAttribute="leading" secondItem="Hqi-gV-dEy" secondAttribute="trailing" constant="48" id="pAI-eU-L28"/>
+                                    <constraint firstItem="kON-9L-D3I" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Hqi-gV-dEy" secondAttribute="trailing" constant="25" id="pAI-eU-L28"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -197,11 +198,11 @@ The quick brown fox jumps over the lazy dog.
                                 <rect key="frame" x="0.0" y="66" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D3w-HD-wx0" id="bEW-a6-jaS">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SWD-W6-f8M">
-                                            <rect key="frame" x="15" y="0.0" width="290" height="43"/>
+                                            <rect key="frame" x="15" y="0.0" width="290" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -239,9 +240,4 @@ The quick brown fox jumps over the lazy dog.
             <point key="canvasLocation" x="1304" y="214"/>
         </scene>
     </scenes>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>
