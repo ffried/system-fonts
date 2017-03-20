@@ -34,22 +34,15 @@
 - (void)setup {
     self.backgroundColor = [UIColor clearColor];
     
-    if ([UIDevice currentDevice].systemVersion.floatValue >= 8.0f) {
-#ifdef __IPHONE_8_0
-        UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
-        UIVisualEffectView *blurView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
-        blurView.translatesAutoresizingMaskIntoConstraints = NO;
-        [self addSubview:blurView];
-        NSDictionary *views = @{@"blurView": blurView};
-        NSArray *constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[blurView]|" options:kNilOptions metrics:nil views:views];
-        [self addConstraints:constraints];
-        constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[blurView]|" options:kNilOptions metrics:nil views:views];
-        [self addConstraints:constraints];
-#endif
-    } else {
-        self.blurBar = [[UIToolbar alloc] initWithFrame:self.bounds];
-        [self.layer insertSublayer:self.blurBar.layer atIndex:0];
-    }
+    UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+    UIVisualEffectView *blurView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+    blurView.translatesAutoresizingMaskIntoConstraints = NO;
+    [self addSubview:blurView];
+    NSDictionary *views = @{@"blurView": blurView};
+    NSArray *constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[blurView]|" options:kNilOptions metrics:nil views:views];
+    [self addConstraints:constraints];
+    constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[blurView]|" options:kNilOptions metrics:nil views:views];
+    [self addConstraints:constraints];
 }
 
 - (void)setHidden:(BOOL)hidden animated:(BOOL)animated {

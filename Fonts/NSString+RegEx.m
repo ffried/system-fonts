@@ -16,8 +16,7 @@
     NSRegularExpression *regex = [[NSRegularExpression alloc] initWithPattern:pattern
                                                                       options:kNilOptions
                                                                         error:&error];
-    if (error)
-        NSLog(@"Regex: %@\nFailed: %@", pattern, error);
+    if (error) NSLog(@"Regex: %@\nFailed: %@", pattern, error);
     return regex;
 }
 

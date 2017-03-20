@@ -1,8 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8152.3" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="jCM-ta-paV">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="jCM-ta-paV">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8124.4"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Main View Controller-->
@@ -14,23 +18,23 @@
                         <viewControllerLayoutGuide type="bottom" id="ddp-kR-6BA"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="onB-DR-Xur">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZTT-tL-Dq4">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <connections>
                                     <segue destination="1yR-Ws-kkZ" kind="embed" identifier="FFEmbedMainNavigationControllerSegue" id="tF5-sY-6Bu"/>
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wwz-6R-yjc" customClass="FFStatusBarView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="PkY-xS-lGW"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ZTT-tL-Dq4" firstAttribute="leading" secondItem="onB-DR-Xur" secondAttribute="leading" id="R6E-jx-TjZ"/>
                             <constraint firstItem="wwz-6R-yjc" firstAttribute="leading" secondItem="onB-DR-Xur" secondAttribute="leading" id="TQQ-fQ-qhD"/>
@@ -77,18 +81,18 @@
                         <viewControllerLayoutGuide type="bottom" id="CmV-Pj-qUr"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="SGZ-2p-NZB">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="Xg2-PZ-nmP">
-                                <rect key="frame" x="20" y="52" width="280" height="20.5"/>
+                                <rect key="frame" x="20" y="72" width="335" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CAk-Qy-qYp">
-                                <rect key="frame" x="20" y="80" width="280" height="430.5"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="20" y="100" width="335" height="509.5"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <string key="text">The quick brown fox jumps over the lazy dog.
 The quick brown fox jumps over the lazy dog.
 The quick brown fox jumps over the lazy dog.
@@ -100,10 +104,10 @@ The quick brown fox jumps over the lazy dog.
                                 </connections>
                             </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qo1-gT-DHj">
-                                <rect key="frame" x="0.0" y="519" width="320" height="49"/>
+                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" momentary="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hqi-gV-dEy">
-                                        <rect key="frame" x="117" y="11" width="86" height="29"/>
+                                        <rect key="frame" x="144.5" y="11" width="86" height="29"/>
                                         <segments>
                                             <segment title="-"/>
                                             <segment title="12"/>
@@ -114,7 +118,7 @@ The quick brown fox jumps over the lazy dog.
                                         </connections>
                                     </segmentedControl>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" momentary="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5w6-Ri-w2t">
-                                        <rect key="frame" x="20" y="11" width="55" height="29"/>
+                                        <rect key="frame" x="20" y="11" width="53" height="29"/>
                                         <segments>
                                             <segment title="▲"/>
                                             <segment title="▼"/>
@@ -124,16 +128,16 @@ The quick brown fox jumps over the lazy dog.
                                         </connections>
                                     </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kON-9L-D3I">
-                                        <rect key="frame" x="273" y="10" width="39" height="30"/>
+                                        <rect key="frame" x="316" y="10" width="39" height="30"/>
                                         <state key="normal" title="Reset">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="resetToDefaults:" destination="fmA-FO-qVs" eventType="touchUpInside" id="P4n-WY-FWc"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.84313732385635376" green="0.85882359743118286" blue="0.87058830261230469" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="backgroundColor" red="0.80728983879089355" green="0.8255457878112793" blue="0.83980238437652588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="Hqi-gV-dEy" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5w6-Ri-w2t" secondAttribute="trailing" constant="25" id="4bv-gq-RE1"/>
                                     <constraint firstItem="Hqi-gV-dEy" firstAttribute="centerX" secondItem="Qo1-gT-DHj" secondAttribute="centerX" id="8NF-lH-bp1"/>
@@ -147,7 +151,7 @@ The quick brown fox jumps over the lazy dog.
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Xg2-PZ-nmP" firstAttribute="leading" secondItem="SGZ-2p-NZB" secondAttribute="leading" constant="20" symbolic="YES" id="06t-rQ-9mg"/>
                             <constraint firstAttribute="trailing" secondItem="Qo1-gT-DHj" secondAttribute="trailing" id="4Qk-M6-lm8"/>
@@ -182,39 +186,9 @@ The quick brown fox jumps over the lazy dog.
             <objects>
                 <tableViewController id="Ibq-YX-duT" customClass="FFFontsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="i0y-9O-Og8">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search Fonts" id="lpq-IZ-DND">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                            <connections>
-                                <outlet property="delegate" destination="Ibq-YX-duT" id="Rbu-c0-941"/>
-                            </connections>
-                        </searchBar>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FFFontCell" textLabel="SWD-W6-f8M" style="IBUITableViewCellStyleDefault" id="D3w-HD-wx0" customClass="FFFontCell">
-                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D3w-HD-wx0" id="bEW-a6-jaS">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SWD-W6-f8M">
-                                            <rect key="frame" x="15" y="0.0" width="290" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="fmA-FO-qVs" kind="push" identifier="FFPushFontDetailViewController" id="IFL-xP-8Ct"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <connections>
                             <outlet property="dataSource" destination="Ibq-YX-duT" id="MPd-9h-tWQ"/>
                             <outlet property="delegate" destination="Ibq-YX-duT" id="5ID-7b-ojX"/>
@@ -223,21 +197,17 @@ The quick brown fox jumps over the lazy dog.
                     <navigationItem key="navigationItem" title="Fonts" id="D4y-bx-lby"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="searchDisplayController" destination="mYA-2F-EN9" id="YJR-AM-gV9"/>
+                        <segue destination="fmA-FO-qVs" kind="push" identifier="FFPushFontDetailViewController" id="4Xj-hH-8pJ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zle-LQ-G6P" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController searchResultsTitle="Fonts" id="mYA-2F-EN9">
-                    <connections>
-                        <outlet property="delegate" destination="Ibq-YX-duT" id="sdN-aI-mGn"/>
-                        <outlet property="searchBar" destination="lpq-IZ-DND" id="xnn-2D-E1H"/>
-                        <outlet property="searchContentsController" destination="Ibq-YX-duT" id="h3i-6k-RuN"/>
-                        <outlet property="searchResultsDataSource" destination="Ibq-YX-duT" id="H00-s0-1cK"/>
-                        <outlet property="searchResultsDelegate" destination="Ibq-YX-duT" id="p20-Lk-fuY"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1304" y="214"/>
         </scene>
     </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
 </document>

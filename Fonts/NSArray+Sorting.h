@@ -8,10 +8,10 @@
 
 @import Foundation;
 
-@interface NSArray (Sorting)
+@interface NSArray<ObjectType> (Sorting)
 
-- (NSArray *)arraySortedByKey:(NSString *)key ascending:(BOOL)ascending;
+- (NSArray<ObjectType> *)arraySortedByKey:(NSString *)key ascending:(BOOL)ascending;
 
-- (NSArray *)arraySortedByKeyAndAscendingDictionary:(NSDictionary *)keyAscDict;
+- (NSArray<ObjectType> *)arraySortedByKeyAndAscendingDictionary:(NSDictionary<NSString *, id> *)keyAscDict;
 
 @end

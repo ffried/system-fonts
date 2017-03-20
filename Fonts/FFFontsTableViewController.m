@@ -13,112 +13,72 @@
 #import "FFMainViewController.h"
 
 @interface FFFontsTableViewController ()
-@property (nonatomic, strong) NSArray *fontFamilies;
-@property (nonatomic, strong) NSArray *filteredFontFamiliesArray;
-@property (nonatomic, strong) FFMainViewController *mainVC;
+@property (nonatomic, strong) FFBaseFontsTableViewController *searchResultsController;
+@property (nonatomic, strong) UISearchController *searchController;
 @end
 
-static NSString *const FFFontCellIdentifier = @"FFFontCell";
-static NSString *const FFPushFontDetailViewControllerSegueIdentifier = @"FFPushFontDetailViewController";
 @implementation FFFontsTableViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    [self.navigationController setNavigationBarHidden:YES];
     
     self.fontFamilies = [FFFontFamily allFontFamilies];
     
-    [self.searchDisplayController.searchResultsTableView registerClass:[FFFontCell class] forCellReuseIdentifier:FFFontCellIdentifier];
+    self.searchResultsController = [[FFBaseFontsTableViewController alloc] initWithStyle:UITableViewStylePlain];
+    self.searchResultsController.tableView.delegate = self;
     
-    self.mainVC = FFFindMainViewController(self);
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    [self.mainVC.statusBarView setHidden:NO animated:animated];
-    [self.navigationController setNavigationBarHidden:YES animated:animated];
-}
-
-#pragma mark - Table view data source
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    // Return the number of sections.
-    BOOL searchTableView = (tableView == self.searchDisplayController.searchResultsTableView);
-    return (searchTableView) ? 1 : _fontFamilies.count;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    // Return the number of rows in the section.
-    BOOL searchTableView = (tableView == self.searchDisplayController.searchResultsTableView);
-    return (searchTableView) ? _filteredFontFamiliesArray.count : ((FFFontFamily *)_fontFamilies[section]).fonts.count;
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    BOOL searchTableView = (tableView == self.searchDisplayController.searchResultsTableView);
-    return (searchTableView) ? nil : ((FFFontFamily *)_fontFamilies[section]).name;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    BOOL searchTableView = (tableView == self.searchDisplayController.searchResultsTableView);
+    self.searchController = [[UISearchController alloc] initWithSearchResultsController:self.searchResultsController];
+    self.searchController.hidesNavigationBarDuringPresentation = NO;
+    self.searchController.searchResultsUpdater = self;
+    self.searchController.delegate = self;
+    self.searchController.searchBar.delegate = self;
+    self.searchController.searchBar.scopeButtonTitles = [NSArray array];
+    [self.searchController.searchBar sizeToFit];
+    self.tableView.tableHeaderView = self.searchController.searchBar;
     
-    FFFontCell *cell = [tableView dequeueReusableCellWithIdentifier:FFFontCellIdentifier forIndexPath:indexPath];
-    if (!cell) cell = [[FFFontCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:FFFontCellIdentifier];
-    
-    FFFont *font = nil;
-    if (!searchTableView) {
-        font = ((FFFontFamily *)_fontFamilies[indexPath.section]).fonts[indexPath.row];
-    } else {
-        font = _filteredFontFamiliesArray[indexPath.row];
-    }
-    [cell configureWithFFFont:font];
-    
-    return cell;
-}
-
-#pragma mark - Navigation
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (tableView == self.searchDisplayController.searchResultsTableView) {
-        [self performSegueWithIdentifier:FFPushFontDetailViewControllerSegueIdentifier
-                                  sender:[tableView cellForRowAtIndexPath:indexPath]];
-    }
-}
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    if ([segue.identifier isEqualToString:FFPushFontDetailViewControllerSegueIdentifier]) {
-        FFFontDetailViewController *fontDetail = segue.destinationViewController;
-        if ([sender isKindOfClass:[FFFontCell class]]) {
-            fontDetail.font = [(FFFontCell *)sender font];
-        }
-    }
+    self.definesPresentationContext = YES;
 }
 
 #pragma mark - Search
-- (void)searchForFontsWithName:(NSString *)fontName
+- (NSArray *)fontsMatchingName:(NSString *)fontName
 {
-    NSMutableArray *foundFonts = [NSMutableArray new];
     NSPredicate *filterPredicate = [NSPredicate predicateWithFormat:@"name contains[c] %@", fontName];
-    [_fontFamilies enumerateObjectsUsingBlock:^(FFFontFamily *fontFamily, NSUInteger idx, BOOL *stop) {
-        [foundFonts addObjectsFromArray:[fontFamily.fonts filteredArrayUsingPredicate:filterPredicate]];
+    NSMutableArray<FFFontFamily *> *foundFamilies = [NSMutableArray new];
+    [self.fontFamilies enumerateObjectsUsingBlock:^(FFFontFamily *fontFamily, NSUInteger idx, BOOL *stop) {
+        NSArray *matchedFonts = [fontFamily.fonts filteredArrayUsingPredicate:filterPredicate];
+        if (matchedFonts.count > 0) {
+            FFFontFamily *family = [fontFamily copy];
+            [family setValue:matchedFonts forKey:FFProperty(fonts)];
+            [foundFamilies addObject:family];
+        }
     }];
     
-    _filteredFontFamiliesArray = [NSArray arrayWithArray:foundFonts];
+    return [NSArray arrayWithArray:foundFamilies];
 }
 
-- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
-{
-    [self searchForFontsWithName:searchString];
-    return YES;
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+    self.searchResultsController.fontFamilies = [self fontsMatchingName:searchController.searchBar.text];
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [searchBar resignFirstResponder];
+}
+
+- (void)willPresentSearchController:(UISearchController *)searchController {
+    
+}
+
+- (void)didPresentSearchController:(UISearchController *)searchController {
+    
+}
+
+- (void)willDismissSearchController:(UISearchController *)searchController {
+    
+}
+
+- (void)didDismissSearchController:(UISearchController *)searchController {
+    
 }
 
 @end

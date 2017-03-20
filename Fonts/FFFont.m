@@ -47,9 +47,7 @@
     if (index != NSNotFound) {
         NSInteger newIndex = index - 1;
         NSUInteger count = self.fontFamily.fonts.count;
-        if (newIndex >= 0 && newIndex < count) {
-            return YES;
-        }
+        return (newIndex >= 0 && newIndex < count);
     }
     return NO;
 }
@@ -60,9 +58,7 @@
     if (index != NSNotFound) {
         NSInteger newIndex = index + 1;
         NSUInteger count = self.fontFamily.fonts.count;
-        if (newIndex >= 0 && newIndex < count) {
-            return YES;
-        }
+        return (newIndex >= 0 && newIndex < count);
     }
     return NO;
 }
@@ -99,7 +95,7 @@
     if ([object isKindOfClass:[FFFont class]]) {
         FFFont *obj = object;
         BOOL sameName = [obj.name isEqualToString:self.name];
-        BOOL sameFamily = [obj.fontFamily.name isEqualToString:self.fontFamily.name];
+        BOOL sameFamily = [obj.fontFamily isEqual:self.fontFamily];
         return sameFamily && sameName;
     }
     return NO;
@@ -116,13 +112,13 @@
 #pragma mark - NSCoding
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
-    return [self initWithName:[aDecoder decodeObjectForKey:@"name"]];
+    return [self initWithName:[aDecoder decodeObjectForKey:FFProperty(name)]];
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
-    [aCoder encodeObject:self.name forKey:@"name"];
-    //[aCoder encodeObject:self.fontFamily forKey:@"fontFamily"];
+    [aCoder encodeObject:self.name forKey:FFProperty(name)];
+    //[aCoder encodeObject:self.fontFamily forKey:FFProperty(fontFamily)];
 }
 
 @end

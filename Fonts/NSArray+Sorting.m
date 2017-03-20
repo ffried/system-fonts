@@ -15,7 +15,7 @@
     return [self arraySortedByKeyAndAscendingDictionary:@{key: @(ascending)}];
 }
 
-- (NSArray *)arraySortedByKeyAndAscendingDictionary:(NSDictionary *)keyAscDict
+- (NSArray *)arraySortedByKeyAndAscendingDictionary:(NSDictionary<NSString *, id> *)keyAscDict
 {
     NSMutableArray *sortDescriptors = [NSMutableArray array];
     [keyAscDict enumerateKeysAndObjectsUsingBlock:^(NSString *key, id obj, BOOL *stop) {

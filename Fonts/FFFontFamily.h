@@ -7,14 +7,15 @@
 //
 
 @import Foundation;
+@class FFFont;
 
 @interface FFFontFamily : NSObject <NSCopying, NSCoding>
 
-+ (NSArray *)allFontFamilies;
++ (NSArray<FFFontFamily *> *)allFontFamilies;
 
 - (instancetype)initWithName:(NSString *)name NS_DESIGNATED_INITIALIZER;
 
 @property (nonatomic, strong, readonly) NSString *name;
-@property (nonatomic, strong, readonly) NSArray *fonts;
+@property (nonatomic, strong, readonly) NSArray<FFFont *> *fonts;
 
 @end

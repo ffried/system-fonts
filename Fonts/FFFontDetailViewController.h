@@ -7,8 +7,7 @@
 //
 
 @import Foundation;
-#import "FFFontFamily.h"
-#import "FFFont.h"
+@class FFFont;
 
 @interface FFFontDetailViewController : UIViewController
 

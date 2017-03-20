@@ -7,6 +7,7 @@
 //
 
 #import "FFFontCell.h"
+#import "FFFont.h"
 
 @interface FFFontCell ()
 @property (nonatomic, strong) FFFont *font;

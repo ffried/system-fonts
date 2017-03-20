@@ -7,7 +7,7 @@
 //
 
 @import UIKit;
-#import "FFFont.h"
+@class FFFont;
 
 @interface FFFontCell : UITableViewCell
 

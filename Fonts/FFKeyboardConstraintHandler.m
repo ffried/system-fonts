@@ -82,9 +82,18 @@
                                       UIViewAnimationOptionOverrideInheritedCurve |
                                       curve << 16);
     CGRect endFrame = [note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    
+    CGFloat height = 0.0;
+    if (self.containingView.window != nil) {
+        UIWindow *window = self.containingView.window;
+        CGRect windowFrame = [window convertRect:self.containingView.bounds fromView:self.containingView];
+        CGRect keyboardFrame = CGRectIntersection(windowFrame, endFrame);
+        CGRect coveredFrame = [window convertRect:keyboardFrame toView:self.containingView];
+        height = coveredFrame.size.height;
+    }
     [self.containingView layoutIfNeeded];
     [UIView animateWithDuration:duration delay:0.0 options:options animations:^{
-        self.constraint.constant = endFrame.size.height;
+        self.constraint.constant = height;
         [self.containingView layoutIfNeeded];
     } completion:^(BOOL finished) {}];
 }

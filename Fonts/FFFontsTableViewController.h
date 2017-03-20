@@ -7,7 +7,8 @@
 //
 
 @import UIKit;
+#import "FFBaseFontsTableViewController.h"
 
-@interface FFFontsTableViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate>
+@interface FFFontsTableViewController : FFBaseFontsTableViewController <UISearchControllerDelegate, UISearchResultsUpdating, UISearchBarDelegate>
 
 @end

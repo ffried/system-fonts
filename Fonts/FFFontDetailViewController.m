@@ -9,6 +9,8 @@
 #import "FFFontDetailViewController.h"
 @import QuartzCore;
 
+#import "FFFontFamily.h"
+#import "FFFont.h"
 #import "FFKeyboardConstraintHandler.h"
 #import "NSString+RegEx.h"
 #import "FFMainViewController.h"
@@ -19,10 +21,11 @@ static CGFloat const kDefaultFontSize = 12.0f;
 static CGFloat const kMinimumFontSize = 5.0f;
 static CGFloat const kMaximumFontSize = 72.0f;
 
-@interface FFFontDetailViewController () <UIAlertViewDelegate>
+@interface FFFontDetailViewController () <UITextFieldDelegate>
 @property (nonatomic, assign) CGFloat currentFontSize;
 @property (nonatomic, strong) FFKeyboardConstraintHandler *keyboardConstraintHandler;
 @property (nonatomic, strong) FFMainViewController *mainVC;
+@property (nonatomic, weak) UIAlertAction *fontAlertDoneAction;
 
 - (void)setContents;
 
@@ -127,32 +130,22 @@ static CGFloat const kMaximumFontSize = 72.0f;
     NSString *message = @"Please enter the desired font size (between 5 and 72).";
     NSString *cancelButtonTitle = @"Cancel";
     NSString *doneButtonTitle = @"Done";
-    // TODO: use UIAlertController
-//    if ([UIAlertController class]) {
-//#ifdef __IPHONE_8_0
-//        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
-//                                                                                 message:message
-//                                                                          preferredStyle:UIAlertControllerStyleAlert];
-//        [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
-//            textField.keyboardType = UIKeyboardTypeDecimalPad;
-//        }];
-//        [alertController addAction:[UIAlertAction actionWithTitle:cancelButtonTitle style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-//            
-//        }]];
-//        [alertController addAction:[UIAlertAction actionWithTitle:doneButtonTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-//            
-//        }]];
-//#endif
-//    } else {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title
-                                                            message:message
-                                                           delegate:self
-                                                  cancelButtonTitle:cancelButtonTitle
-                                                  otherButtonTitles:doneButtonTitle, nil];
-        alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
-        [alertView textFieldAtIndex:0].keyboardType = UIKeyboardTypeDecimalPad;
-        [alertView show];
-//    }
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
+                                                                             message:message
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.keyboardType = UIKeyboardTypeDecimalPad;
+        textField.delegate = self;
+    }];
+    [alertController addAction:[UIAlertAction actionWithTitle:cancelButtonTitle style:UIAlertActionStyleCancel handler:nil]];
+    UIAlertAction *fontAlertDoneAction = [UIAlertAction actionWithTitle:doneButtonTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        self.currentFontSize = alertController.textFields.firstObject.text.floatValue;
+    }];
+    fontAlertDoneAction.enabled = NO;
+    [alertController addAction:fontAlertDoneAction];
+    self.fontAlertDoneAction = fontAlertDoneAction;
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 - (void)increaseFontSize
@@ -224,19 +217,11 @@ static CGFloat const kMaximumFontSize = 72.0f;
     }
 }
 
-#pragma mark - UIAlertViewDelegate
-- (BOOL)alertViewShouldEnableFirstOtherButton:(UIAlertView *)alertView
-{
-    NSString *fontSizeText = [alertView textFieldAtIndex:0].text;
-    return [self validFontSize:fontSizeText];
-}
-
-- (void)alertView:(UIAlertView *)alertView willDismissWithButtonIndex:(NSInteger)buttonIndex
-{
-    if ([[alertView buttonTitleAtIndex:buttonIndex] isEqualToString:@"Done"]) {
-        NSString *fontSizeText = [alertView textFieldAtIndex:0].text;
-        self.currentFontSize = fontSizeText.floatValue;
-    }
+#pragma mark - UITextFieldDelegate
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    BOOL isValidFontSize = [self validFontSize:[textField.text stringByReplacingCharactersInRange:range withString:string]];
+    self.fontAlertDoneAction.enabled = isValidFontSize;
+    return YES;
 }
 
 @end
