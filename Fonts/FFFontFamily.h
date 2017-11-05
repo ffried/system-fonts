@@ -15,7 +15,7 @@
 
 - (instancetype)initWithName:(NSString *)name NS_DESIGNATED_INITIALIZER;
 
-@property (nonatomic, strong, readonly) NSString *name;
-@property (nonatomic, strong, readonly) NSArray<FFFont *> *fonts;
+@property (nonatomic, copy, readonly) NSString *name;
+@property (nonatomic, copy, readonly) NSArray<FFFont *> *fonts;
 
 @end

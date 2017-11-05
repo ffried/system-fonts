@@ -39,6 +39,7 @@
 		0794579818190DC60041DC75 /* FontsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0794579718190DC60041DC75 /* FontsTests.m */; };
 		079457A3181910400041DC75 /* FFFontsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 079457A2181910400041DC75 /* FFFontsTableViewController.m */; };
 		079457A918191A050041DC75 /* FFFontCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 079457A818191A050041DC75 /* FFFontCell.m */; };
+		07ACB71B1FAF751200CF366C /* NSArray+DeepCopy.m in Sources */ = {isa = PBXBuildFile; fileRef = 07ACB71A1FAF751200CF366C /* NSArray+DeepCopy.m */; };
 		07DDF0D21902A79400373138 /* NSString+RegEx.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DDF0D11902A79400373138 /* NSString+RegEx.m */; };
 		07F00E7C197588A900F68E5B /* FFKeyboardConstraintHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F00E7B197588A900F68E5B /* FFKeyboardConstraintHandler.m */; };
 		07F00E7F19758F5400F68E5B /* FFStatusBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F00E7E19758F5400F68E5B /* FFStatusBarView.m */; };
@@ -103,6 +104,8 @@
 		079457A2181910400041DC75 /* FFFontsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFontsTableViewController.m; sourceTree = "<group>"; };
 		079457A718191A050041DC75 /* FFFontCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFFontCell.h; sourceTree = "<group>"; };
 		079457A818191A050041DC75 /* FFFontCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FFFontCell.m; sourceTree = "<group>"; };
+		07ACB7191FAF751200CF366C /* NSArray+DeepCopy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+DeepCopy.h"; sourceTree = "<group>"; };
+		07ACB71A1FAF751200CF366C /* NSArray+DeepCopy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+DeepCopy.m"; sourceTree = "<group>"; };
 		07DDF0D01902A79400373138 /* NSString+RegEx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+RegEx.h"; sourceTree = "<group>"; };
 		07DDF0D11902A79400373138 /* NSString+RegEx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+RegEx.m"; sourceTree = "<group>"; };
 		07F00E7A197588A900F68E5B /* FFKeyboardConstraintHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FFKeyboardConstraintHandler.h; sourceTree = "<group>"; };
@@ -177,6 +180,8 @@
 				07DDF0D11902A79400373138 /* NSString+RegEx.m */,
 				074D4CF5186EDEB100672AAF /* NSArray+Sorting.h */,
 				074D4CF6186EDEB100672AAF /* NSArray+Sorting.m */,
+				07ACB7191FAF751200CF366C /* NSArray+DeepCopy.h */,
+				07ACB71A1FAF751200CF366C /* NSArray+DeepCopy.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -370,6 +375,7 @@
 				072316161E7FD43D00C67F1B /* FFBaseFontsTableViewController.m in Sources */,
 				07DDF0D21902A79400373138 /* NSString+RegEx.m in Sources */,
 				079457A3181910400041DC75 /* FFFontsTableViewController.m in Sources */,
+				07ACB71B1FAF751200CF366C /* NSArray+DeepCopy.m in Sources */,
 				074D4CF4186EDCA500672AAF /* FFFontFamily.m in Sources */,
 				074D4CFA186F0FDA00672AAF /* FFFont.m in Sources */,
 				07F00E8219759B9F00F68E5B /* FFMainViewController.m in Sources */,

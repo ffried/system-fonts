@@ -9,10 +9,11 @@
 #import "FFFontFamily.h"
 #import "FFFont.h"
 #import "NSArray+Sorting.h"
+#import "NSArray+DeepCopy.h"
 
 @interface FFFontFamily ()
-@property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSArray<FFFont *> *fonts;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSArray<FFFont *> *fonts;
 @end
 
 @implementation FFFontFamily
@@ -54,7 +55,7 @@
 
 - (void)setFonts:(NSArray<FFFont *> *)fonts {
     if (![_fonts isEqualToArray:fonts]) {
-        _fonts = fonts;
+        _fonts = [fonts deepCopy];
         [_fonts setValue:self forKey:FFProperty(fontFamily)];
     }
 }

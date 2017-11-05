@@ -9,7 +9,7 @@
 #import "FFFont.h"
 
 @interface FFFont ()
-@property (nonatomic, strong) NSString *name;
+@property (nonatomic, copy) NSString *name;
 @property (nonatomic, weak) FFFontFamily *fontFamily;
 @end
 
