@@ -27,13 +27,16 @@
     
     self.searchResultsController = [[FFBaseFontsTableViewController alloc] initWithStyle:UITableViewStylePlain];
     self.searchResultsController.tableView.delegate = self;
+    if (@available(iOS 11.0, *)) {
+        self.searchResultsController.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    }
     
     self.searchController = [[UISearchController alloc] initWithSearchResultsController:self.searchResultsController];
     self.searchController.hidesNavigationBarDuringPresentation = NO;
     self.searchController.searchResultsUpdater = self;
     self.searchController.delegate = self;
     self.searchController.searchBar.delegate = self;
-    self.searchController.searchBar.scopeButtonTitles = [NSArray array];
+    self.searchController.searchBar.scopeButtonTitles = @[];
     [self.searchController.searchBar sizeToFit];
     self.tableView.tableHeaderView = self.searchController.searchBar;
     

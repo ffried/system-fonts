@@ -8,13 +8,17 @@
 
 @import UIKit;
 #import "FFStatusBarView.h"
-
 @class FFMainViewController;
-extern FFMainViewController *FFFindMainViewController(UIViewController *vc);
+
+NS_ASSUME_NONNULL_BEGIN
+
+extern FFMainViewController  * _Nullable FFFindMainViewController(UIViewController *vc);
 
 @interface FFMainViewController : UIViewController
 
-@property (nonatomic, weak) IBOutlet FFStatusBarView *statusBarView;
-@property (weak, nonatomic) IBOutlet UIView *containerView;
+@property (nonatomic, weak, nullable) IBOutlet FFStatusBarView *statusBarView;
+@property (nonatomic, weak, nullable) IBOutlet UIView *containerView;
 
 @end
+
+NS_ASSUME_NONNULL_END

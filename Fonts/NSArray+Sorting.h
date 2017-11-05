@@ -11,7 +11,6 @@
 @interface NSArray<ObjectType> (Sorting)
 
 - (NSArray<ObjectType> *)arraySortedByKey:(NSString *)key ascending:(BOOL)ascending;
-
-- (NSArray<ObjectType> *)arraySortedByKeyAndAscendingDictionary:(NSDictionary<NSString *, id> *)keyAscDict;
+- (NSArray<ObjectType> *)arraySortedByKeyAndAscendingDictionary:(NSDictionary<NSString *, NSNumber *> *)keyAscDict;
 
 @end

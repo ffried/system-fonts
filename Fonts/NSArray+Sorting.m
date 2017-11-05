@@ -15,10 +15,10 @@
     return [self arraySortedByKeyAndAscendingDictionary:@{key: @(ascending)}];
 }
 
-- (NSArray *)arraySortedByKeyAndAscendingDictionary:(NSDictionary<NSString *, id> *)keyAscDict
+- (NSArray *)arraySortedByKeyAndAscendingDictionary:(NSDictionary<NSString *, NSNumber *> *)keyAscDict
 {
     NSMutableArray *sortDescriptors = [NSMutableArray array];
-    [keyAscDict enumerateKeysAndObjectsUsingBlock:^(NSString *key, id obj, BOOL *stop) {
+    [keyAscDict enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSNumber *obj, BOOL *stop) {
         NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:key ascending:[obj boolValue]];
         [sortDescriptors addObject:sortDescriptor];
     }];
