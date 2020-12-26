@@ -11,9 +11,9 @@ The app is universal and runs on iPhone and iPads. It requires at least iOS 9.0.
 
 ## Issues
 
-If you find any issues, feel free to open an issue [here](https://bitbucket.org/ffried/fonts/issues).
+If you find any issues, feel free to open an issue [here](https://github.com/ffried/system-fonts/issues).
 Even better: if you can fix it, open a pull request!
 
 ## License
 
-See [LICENSE](https://bitbucket.org/ffried/fonts/src/master/LICENSE).
+See [LICENSE](./LICENSE).
